@@ -1,42 +1,43 @@
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+import { Box } from "native-base";
 
 function HomeScreen({ navigation }) {
   return (
-    <View style={styles.container}>
+    <Box style={styles.container}>
       {/* Fila 1 de botones */}
       <View style={styles.buttonRow}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Tips")}
           style={styles.button}
         >
-          <Text style={styles.buttonText}>Boton Food</Text>
+          <Image source={require("../../assets/food.png")} style={styles.icon} />
         </TouchableOpacity>
 
         <TouchableOpacity
           onPress={() => navigation.navigate("Tips")}
           style={styles.button}
         >
-          <Text style={styles.buttonText}>Botón Medicine</Text>
+          <Image source={require("../../assets/clothes.png")} style={styles.icon} />
         </TouchableOpacity>
       </View>
 
-      {/* Fila 2 de botones */}
       <View style={styles.buttonRow}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Tips")}
           style={styles.button}
         >
-          <Text style={styles.buttonText}>Botón Clothes</Text>
+          <Image source={require("../../assets/medicine.png")} style={styles.icon} />
         </TouchableOpacity>
 
         <TouchableOpacity
           onPress={() => navigation.navigate("Tips")}
           style={styles.button}
         >
-          <Text style={styles.buttonText}>Botón Electronics</Text>
+          <Image source={require("../../assets/electronics.png")} style={styles.icon} />
         </TouchableOpacity>
       </View>
-    </View>
+    </Box>
   );
 }
 
@@ -60,11 +61,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: 5,
   },
-  buttonText: {
-    fontSize: 16,
-    color: "black",
+  icon: {
+    width: 50,
+    height: 50,
   },
 });
 
 export default HomeScreen;
-

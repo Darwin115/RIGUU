@@ -1,10 +1,9 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { NativeBaseProvider, Icon, Pressable } from "native-base";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import HomeScreen from "./src/screens/HomeScreen";
-import NotificationScreen from "./src/screens/NotificationScreen";
 import SettingsScreen from "./src/screens/SettingsScreen";
 import TipsScreen from "./src/screens/TipsScreen";
 import { Ionicons } from "@expo/vector-icons";
@@ -27,33 +26,32 @@ function MainStack() {
           title: "Tips",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center",
         }}
       />
       <Stack.Screen
-        name="Noti"
-        component={NotificationScreen}
+        name="Settings"
+        component={SettingsScreen}
         options={{
-          title: "Noti",
+          title: "Settings",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center",
         }}
       />
     </Stack.Navigator>
   );
 }
 
-
 function MainTabs() {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerTitleAlign: "center",
-        headerStyle: { backgroundColor: "#468585" }, // Aplica el color al header del Tab.Navigator
-        headerTintColor: "#fff", // Color del texto en el header
+        headerStyle: { backgroundColor: "#468585" },
+        headerTintColor: "#fff",
         tabBarButton: (props) => (
-          <TouchableOpacity
+          <Pressable
             {...props}
             style={{
               flex: 1,
@@ -62,31 +60,31 @@ function MainTabs() {
               backgroundColor: "#50B498",
               margin: 5,
               borderRadius: 15,
-              paddingVertical: 15, // Aumenta el alto
-              paddingHorizontal: 10, // Aumenta el ancho
+              paddingVertical: 15,
+              paddingHorizontal: 10,
             }}
           />
         ),
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
-          size = 30; // Aumenta el tamaño del ícono
+          size = 30;
 
           if (route.name === "Donations") {
             iconName = focused ? "heart" : "heart-outline";
-          } else if (route.name === "Notification") {
+          } else if (route.name === "Tips") {
             iconName = focused ? "extension-puzzle" : "extension-puzzle-outline";
           } else if (route.name === "Settings") {
             iconName = focused ? "settings" : "settings-outline";
           }
 
-          return <Ionicons name={iconName} size={size} color="white" />;
+          return <Icon as={Ionicons} name={iconName} size={size} color="white" />;
         },
         tabBarLabelStyle: {
-          fontSize: 14, // Aumenta el tamaño de la fuente
+          fontSize: 14,
           color: "white",
         },
         tabBarStyle: {
-          height: 100, // Aumenta la altura de la barra
+          height: 100,
           borderTopWidth: 0,
           backgroundColor: "#9CDBA6",
         },
@@ -98,7 +96,7 @@ function MainTabs() {
         options={{ title: "Donations" }}
       />
       <Tab.Screen
-        name="Notification"
+        name="Tips"
         component={TipsScreen}
         options={{ title: "Tips and recipes" }}
       />
@@ -111,15 +109,13 @@ function MainTabs() {
   );
 }
 
-
 export default function App() {
   return (
-    <NavigationContainer>
-      <MainStack />
-    </NavigationContainer>
+    <NativeBaseProvider>
+      <NavigationContainer>
+        <StatusBar style="auto" />
+        <MainStack />
+      </NavigationContainer>
+    </NativeBaseProvider>
   );
 }
-
-
-
-
