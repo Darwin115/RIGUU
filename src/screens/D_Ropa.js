@@ -1,61 +1,121 @@
-import React, { useState } from "react";
-import { Button, View, TextInput, StyleSheet, Text, TouchableOpacity } from "react-native";
+import React, { useState, useEffect } from "react";
+import { Button, View, TextInput, StyleSheet, Text } from "react-native";
+import MapView, { Marker } from "react-native-maps";
+import { Picker } from "@react-native-picker/picker";
 
 function D_Ropa({ navigation }) {
-  const [input1, setInput1] = useState(""); // Estado para el primer campo de texto
-  const [input2, setInput2] = useState(""); // Estado para el segundo campo de texto
+  const [selectedClothing, setSelectedClothing] = useState("Camisetas");
+  const [amount, setAmount] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState("Centro de Acopio 1");
+
+  // Coordenadas para los centros de acopio
+  const locations = {
+    "Centro de Acopio 1": { latitude: 21.885215, longitude: -102.291366 },
+    "Centro de Acopio 2": { latitude: 21.874840, longitude: -102.294024 },
+    "Centro de Acopio 3": { latitude: 21.887001, longitude: -102.303765 },
+    "Centro de Acopio 4": { latitude: 21.873456, longitude: -102.317145 },
+  };
+
+  // Estado para manejar la región del mapa
+  const [mapRegion, setMapRegion] = useState({
+    latitude: locations["Centro de Acopio 1"].latitude,
+    longitude: locations["Centro de Acopio 1"].longitude,
+    latitudeDelta: 0.05,
+    longitudeDelta: 0.05,
+  });
+
+  // Estado para forzar la recarga del mapa cuando cambie la ubicación seleccionada
+  const [mapKey, setMapKey] = useState(0);
+
+  // Actualiza la región del mapa cuando cambia la ubicación seleccionada
+  useEffect(() => {
+    const location = locations[selectedLocation];
+    if (location) {
+      setMapRegion({
+        latitude: location.latitude,
+        longitude: location.longitude,
+        latitudeDelta: 0.05,
+        longitudeDelta: 0.05,
+      });
+      // Forzar la recarga del mapa incrementando la clave
+      setMapKey((prevKey) => prevKey + 1);
+    }
+  }, [selectedLocation]); // Esto asegura que la región se actualice correctamente cuando cambie la ubicación
 
   return (
     <View style={styles.container}>
-      {/* Títulos de los campos de texto */}
       <View style={styles.inputRow}>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Objet</Text>
+          <Text style={styles.inputLabel}>Tipo de Ropa</Text>
         </View>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Amount</Text>
+          <Text style={styles.inputLabel}>Cantidad</Text>
         </View>
       </View>
 
-      {/* Fila de campos de texto en la parte superior */}
       <View style={styles.inputRow}>
+        <View style={styles.pickerContainer}>
+          <Picker
+            selectedValue={selectedClothing}
+            onValueChange={(itemValue) => setSelectedClothing(itemValue)}
+            style={styles.clothingPicker}
+          >
+            <Picker.Item label="Camisetas" value="Camisetas" />
+            <Picker.Item label="Pantalones" value="Pantalones" />
+            <Picker.Item label="Chaquetas" value="Chaquetas" />
+            <Picker.Item label="Zapatos" value="Zapatos" />
+            <Picker.Item label="Sábanas" value="Sábanas" />
+            <Picker.Item label="Bufandas" value="Bufandas" />
+            <Picker.Item label="Guantes" value="Guantes" />
+            <Picker.Item label="Sombreros" value="Sombreros" />
+          </Picker>
+        </View>
+
         <TextInput
-          style={styles.input}
-          placeholder="..."
-          value={input1}
-          onChangeText={setInput1}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="..."
-          value={input2}
-          onChangeText={setInput2}
+          style={styles.amountInput}
+          placeholder="Cantidad"
+          value={amount}
+          onChangeText={setAmount}
         />
       </View>
 
-      {/* Botón de acción debajo de los campos de texto usando TouchableOpacity */}
-      <TouchableOpacity
-        style={styles.actionButton}
-        onPress={() => console.log("Botón presionado")}
-      >
-        <Text style={styles.actionButtonText}>Add</Text>
-      </TouchableOpacity>
-
-      {/* Título para el mapa */}
       <Text style={styles.mapTitle}>Seleccionar lugar</Text>
 
-      {/* Cuadro centrado para el mapa */}
-      <View style={styles.mapContainer}>
-        <Text style={styles.mapText}>Aquí irá el mapa</Text>
+      <MapView
+        key={mapKey} // Clave dinámica para forzar la recarga del mapa
+        style={styles.mapContainer}
+        region={mapRegion} // Usamos 'region' para asegurar que el mapa siga la región seleccionada
+      >
+        <Marker
+          coordinate={locations[selectedLocation]}
+          title={selectedLocation}
+          description={
+            selectedLocation === "Centro de Acopio 1"
+              ? "Cruz Roja Aguascalientes"
+              : selectedLocation === "Centro de Acopio 2"
+              ? "DIF Estatal Aguascalientes"
+              : selectedLocation === "Centro de Acopio 3"
+              ? "Banco de Alimentos A.C."
+              : "Parroquia del Sagrario"
+          }
+        />
+      </MapView>
+
+      <View style={styles.locationPickerContainer}>
+        <Picker
+          selectedValue={selectedLocation}
+          onValueChange={(itemValue) => setSelectedLocation(itemValue)}
+          style={styles.picker}
+        >
+          <Picker.Item label="Centro de Acopio 1 - Cruz Roja Aguascalientes" value="Centro de Acopio 1" />
+          <Picker.Item label="Centro de Acopio 2 - DIF Estatal Aguascalientes" value="Centro de Acopio 2" />
+          <Picker.Item label="Centro de Acopio 3 - Banco de Alimentos A.C." value="Centro de Acopio 3" />
+          <Picker.Item label="Centro de Acopio 4 - Parroquia del Sagrario" value="Centro de Acopio 4" />
+        </Picker>
       </View>
 
-      {/* Botón "Donar" debajo del mapa, envuelto en un View para ajustar el tamaño */}
       <View style={styles.donateButtonContainer}>
-        <Button
-          onPress={() => console.log("Donar presionado")}
-          title="Donar"
-          color="#50B498"
-        />
+        <Button onPress={() => console.log("Donar presionado")} title="Donar" color="#50B498" />
       </View>
     </View>
   );
@@ -72,6 +132,9 @@ const styles = StyleSheet.create({
   inputRow: {
     flexDirection: "row",
     marginBottom: 20,
+    justifyContent: "space-between",
+    width: "80%",
+    alignItems: "center",
   },
   inputLabelContainer: {
     flex: 1,
@@ -83,9 +146,49 @@ const styles = StyleSheet.create({
     color: "#468585",
     marginBottom: 2,
   },
-  input: {
-    height: 40,
-    width: "40%",
+  pickerContainer: {
+    width: "50%",
+    marginTop: 10,
+    backgroundColor: "#fff",
+    borderRadius: 5,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  clothingPicker: {
+    height: 49,
+    borderColor: "#468585",
+    borderWidth: 1,
+    borderRadius: 5,
+    backgroundColor: "#fff",
+    color: "#468585",
+    width: "100%",
+  },
+  locationPickerContainer: {
+    width: "90%",
+    marginTop: 10,
+    backgroundColor: "#fff",
+    borderRadius: 5,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  picker: {
+    height: 60,
+    borderColor: "#468585",
+    borderWidth: 1,
+    borderRadius: 5,
+    backgroundColor: "#fff",
+    color: "#468585",
+    width: "100%",
+  },
+  amountInput: {
+    height: 50,
+    width: "50%",
     borderColor: "#468585",
     borderWidth: 1,
     borderRadius: 5,
@@ -93,44 +196,23 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     color: "#468585",
   },
-  actionButton: {
-    marginBottom: 10, // Reducción del margen entre el botón y el mapa
-    backgroundColor: "#50B498",
-    paddingVertical: 15,
-    paddingHorizontal: 30,
-    width: "80%", // Aumentando el ancho del botón
-    borderRadius: 5,
-  },
-  actionButtonText: {
-    fontSize: 18,
-    color: "#fff",
-    fontWeight: "bold",
-    textAlign: "center",
-  },
   mapTitle: {
     fontSize: 20,
     fontWeight: "bold",
     color: "#468585",
-    marginTop: 20, // Reducción del espacio entre el botón y el título
+    marginTop: 20,
   },
   mapContainer: {
     width: "80%",
     height: 350,
-    backgroundColor: "#fff",
     borderRadius: 10,
-    marginVertical: 10, // Reducción del margen vertical
-    alignItems: "center",
-    justifyContent: "center",
+    marginVertical: 10,
     borderColor: "#468585",
     borderWidth: 2,
   },
-  mapText: {
-    color: "#468585",
-    fontSize: 18,
-  },
   donateButtonContainer: {
-    width: "80%", // Aumentando el ancho del botón "Donar"
-    marginTop: 20,
+    width: "80%",
+    marginTop: 40,
   },
 });
 

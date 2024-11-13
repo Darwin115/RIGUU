@@ -33,6 +33,12 @@ import Preg_1 from "./src/screens/Preg_1";
 import Preg_2 from "./src/screens/Preg_2";
 import Preg_3 from "./src/screens/Preg_3";
 import Preg_4 from "./src/screens/Preg_4";
+
+
+// Login
+
+import LoginScreen from './src/screens/LoginScreen';
+import RegisterScreen from './src/screens/RegisterScreen';
 // ----------------------------------------------------------------------------------------
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -40,11 +46,40 @@ const Stack = createNativeStackNavigator();
 function MainStack() {
   return (
     <Stack.Navigator>
+
+
+<Stack.Screen
+        name="Login"
+        component={LoginScreen}
+        options={{
+          title: "Login",
+          headerStyle: { backgroundColor: "#468585" },
+          headerTintColor: "#fff",
+          headerTitleAlign: "center",
+        }}
+      />
+
+
+
+<Stack.Screen
+        name="Register"
+        component={RegisterScreen}
+        options={{
+          title: "Register",
+          headerStyle: { backgroundColor: "#468585" },
+          headerTintColor: "#fff",
+          headerTitleAlign: "center",
+        }}
+      />
+
+
+
       <Stack.Screen
         name="HomeTabs"
         component={MainTabs}
         options={{ headerShown: false }}
       />
+      
       <Stack.Screen
         name="Tips"
         component={TipsScreen}
@@ -55,6 +90,8 @@ function MainStack() {
           headerTitleAlign: "center",
         }}
       />
+
+
       <Stack.Screen
         name="Settings"
         component={SettingsScreen}
