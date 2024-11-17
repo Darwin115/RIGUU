@@ -25,7 +25,7 @@ function SettingsScreen({ navigation }) {
       </TouchableOpacity>
 
       {/* Botón de Logout con ícono */}
-      <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate("Donations")}>
+      <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate("Login")}>
         <Ionicons
           name="log-out-outline" // Aquí eliges el nombre del ícono que desees
           size={24} // Tamaño del ícono

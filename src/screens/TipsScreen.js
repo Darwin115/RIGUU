@@ -5,6 +5,9 @@ import { Box } from "native-base";
 function TipsScreen({ navigation }) {
   return (
     <Box style={styles.container}>
+      {/* Título de la pantalla */}
+      <Text style={styles.title}>Consejos para Reducir el Desperdicio</Text>
+
       {/* Fila 1 de botones */}
       <View style={styles.buttonRow}>
         <View style={styles.buttonContainer}>
@@ -28,6 +31,7 @@ function TipsScreen({ navigation }) {
         </View>
       </View>
 
+      {/* Fila 2 de botones */}
       <View style={styles.buttonRow}>
         <View style={styles.buttonContainer}>
           <Text style={styles.buttonText}>Medicinas</Text>
@@ -59,6 +63,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#9CDBA6",
+  },
+  title: {
+    fontSize: 24, // Tamaño del título
+    fontWeight: "bold",
+    color: "#468585", // Color del título
+    marginBottom: 20, // Reducido el espaciado debajo del título
+    textAlign: "center",
+    paddingHorizontal: 20, // Espaciado horizontal
+    paddingVertical: 5, // Reducido el espaciado vertical
+    backgroundColor: "#e2f0d9", // Fondo suave para resaltar el título
+    borderRadius: 8, // Bordes redondeados
   },
   buttonRow: {
     flexDirection: "row",

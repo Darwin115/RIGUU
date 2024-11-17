@@ -107,7 +107,7 @@ function MainStack() {
         name="Noti"
         component={NotificationScreen}
         options={{
-          title: "Perfil de Usuario",
+          title: "User Profile",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", // Centra el título en el header
@@ -118,7 +118,7 @@ function MainStack() {
         name="Comida"
         component={D_Comida}
         options={{
-          title: "Comida",
+          title: "Food",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", // Centra el título en el header
@@ -129,7 +129,7 @@ function MainStack() {
         name="Ropa"
         component={D_Ropa}
         options={{
-          title: "Ropa",
+          title: "Clothing",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", // Centra el título en el header
@@ -140,7 +140,7 @@ function MainStack() {
         name="Medicina"
         component={D_Med}
         options={{
-          title: "Medicina",
+          title: "Medicine",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", // Centra el título en el header
@@ -151,7 +151,7 @@ function MainStack() {
         name="Electrónicos"
         component={D_Elec}
         options={{
-          title: "Electrónicos",
+          title: "Electronics",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", // Centra el título en el header
@@ -162,7 +162,7 @@ function MainStack() {
         name="Tus Donaciones"
         component={Tus_Don}
         options={{
-          title: "Tus Donaciones",
+          title: "Your donations",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", // Centra el título en el header
@@ -359,7 +359,7 @@ function MainTabs() {
       <Tab.Screen
         name="Donations"
         component={HomeScreen}
-        options={{ title: "¿Qué desea donar?" }}
+        options={{ title: "Donations" }}
       />
       <Tab.Screen
         name="Tips"

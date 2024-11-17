@@ -10,7 +10,7 @@ function HomeScreen({ navigation }) {
       {/* Fila 1 de botones */}
       <View style={styles.buttonRow}>
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Comida</Text>
+          <Text style={styles.buttonText}>Food</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Comida")}
             style={styles.button}
@@ -20,7 +20,7 @@ function HomeScreen({ navigation }) {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Ropa</Text>
+          <Text style={styles.buttonText}>Clothing</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Ropa")}
             style={styles.button}
@@ -32,7 +32,7 @@ function HomeScreen({ navigation }) {
 
       <View style={styles.buttonRow}>
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Medicinas</Text>
+          <Text style={styles.buttonText}>Medicine</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Medicina")}
             style={styles.button}
@@ -42,7 +42,7 @@ function HomeScreen({ navigation }) {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Electrónica</Text>
+          <Text style={styles.buttonText}>Electronics</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Electrónicos")}
             style={styles.button}
@@ -53,7 +53,7 @@ function HomeScreen({ navigation }) {
       </View>
 
       {/* Título y cuadro de texto para tus últimas donaciones */}
-      <Text style={styles.donationsTitle}>Tus últimas donaciones</Text>
+      <Text style={styles.donationsTitle}>Your last donations</Text>
       <TextInput
         style={styles.donationsInput}
         placeholder="Texto"
@@ -61,7 +61,7 @@ function HomeScreen({ navigation }) {
         onChangeText={setDonations}
       />
       <TouchableOpacity style={styles.donationsButton} onPress={() => navigation.navigate("Tus Donaciones")}>
-        <Text style={styles.donationsButtonText}>Tus donaciones</Text>
+        <Text style={styles.donationsButtonText}>Your donations</Text>
       </TouchableOpacity>
     </Box>
   );
