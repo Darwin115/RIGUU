@@ -3,43 +3,42 @@ import { TouchableOpacity, View, StyleSheet, Text } from 'react-native';
 import { Video } from 'expo-av';
 
 function Guia({ navigation }) {
-  // Estado para controlar si el video está pausado o reproduciéndose
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef(null); // Referencia al componente de video para controlarlo
 
-  // Función para reproducir el video
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null); 
+ 
   const handlePlayButtonClick = () => {
     setIsPlaying(true);
-    videoRef.current.playAsync(); // Reproduce el video
+    videoRef.current.playAsync(); 
   };
 
-  // Función para pausar el video
+ 
   const handlePauseButtonClick = () => {
     setIsPlaying(false);
-    videoRef.current.pauseAsync(); // Pausa el video
+    videoRef.current.pauseAsync(); 
   };
 
-  // Función para reiniciar el video
+ 
   const handleRestartButtonClick = () => {
     setIsPlaying(true);
-    videoRef.current.stopAsync(); // Detiene el video
-    videoRef.current.playFromPositionAsync(0); // Reproduce el video desde el principio
+    videoRef.current.stopAsync(); 
+    videoRef.current.playFromPositionAsync(0); 
   };
 
   return (
     <View style={styles.container}>
       {/* Título de la pantalla */}
-      <Text style={styles.headerText}>Vídeo Guía</Text>
+      <Text style={styles.headerText}>Video Guide</Text>
 
       {/* Video siempre visible con controles nativos */}
       <Video
         ref={videoRef}
-        source={require('../../assets/video.mp4')} // Ruta del video local en la carpeta assets
+        source={require('../../assets/video.mp4')} 
         style={styles.video}
-        useNativeControls={true} // Habilita los controles nativos
+        useNativeControls={true} 
         resizeMode="contain"
         isLooping={false}
-        shouldPlay={isPlaying} // Controla si el video debe reproducirse
+        shouldPlay={isPlaying}
       />
 
       {/* Botones personalizados para controlar el video */}
@@ -67,7 +66,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   headerText: {
-    fontSize: 36, // Aumenta el tamaño del título
+    fontSize: 36, 
     fontWeight: 'bold',
     color: '#468585',
     marginBottom: 20,
@@ -75,27 +74,27 @@ const styles = StyleSheet.create({
   video: {
     width: '100%',
     height: 300,
-    marginBottom: 5, // Reducir aún más el margen debajo del video
+    marginBottom: 5, 
   },
   buttonsContainer: {
-    flexDirection: 'column', // Los botones estarán en una columna
+    flexDirection: 'column', 
     justifyContent: 'center',
-    alignItems: 'stretch', // Los botones ocuparán todo el ancho disponible
+    alignItems: 'stretch', 
     width: '100%',
-    marginBottom: 5, // Reducir aún más el margen debajo de los botones
+    marginBottom: 5, 
   },
   button: {
-    marginBottom: 16, // Agregar separación entre los botones
-    backgroundColor: '#50B498', // Color de fondo del botón
-    paddingVertical: 15, // Altura del botón
-    alignItems: 'center', // Centrar el texto dentro del botón
-    justifyContent: 'center', // Centrar el texto dentro del botón
-    borderRadius: 5, // Bordes redondeados
+    marginBottom: 16, 
+    backgroundColor: '#50B498', 
+    paddingVertical: 15, 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    borderRadius: 5, 
   },
   buttonText: {
-    fontSize: 20, // Tamaño de fuente más grande
+    fontSize: 20, 
     fontWeight: 'bold',
-    color: 'white', // Color del texto
+    color: 'white', 
   }
 });
 

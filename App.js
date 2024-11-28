@@ -110,7 +110,7 @@ function MainStack() {
           title: "User Profile",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center", 
         }}
       />
 
@@ -121,7 +121,7 @@ function MainStack() {
           title: "Food",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center", 
         }}
       />
 
@@ -132,7 +132,7 @@ function MainStack() {
           title: "Clothing",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center", 
         }}
       />
 
@@ -143,7 +143,7 @@ function MainStack() {
           title: "Medicine",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center", 
         }}
       />
 
@@ -154,7 +154,7 @@ function MainStack() {
           title: "Electronics",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center", 
         }}
       />
 
@@ -165,7 +165,7 @@ function MainStack() {
           title: "Your donations",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center", 
         }}
       />
 
@@ -173,10 +173,10 @@ function MainStack() {
         name="Tips Comida"
         component={Tips_Res}
         options={{
-          title: "Tips Comida",
+          title: "Food Tips",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center", 
         }}
       />
 
@@ -184,10 +184,10 @@ function MainStack() {
         name="Tips Ropa"
         component={Tips_Rop}
         options={{
-          title: "Tips Ropa",
+          title: "Clothing Tips",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center", 
         }}
       />
 
@@ -195,10 +195,10 @@ function MainStack() {
         name="Tips Medicinas"
         component={Tips_Med}
         options={{
-          title: "Tips Medicinas",
+          title: "Tips Medicines",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center",
         }}
       />
 
@@ -206,10 +206,10 @@ function MainStack() {
         name="Tips Electrónicos"
         component={Tips_Elec}
         options={{
-          title: "Tips Electrónicos",
+          title: "Electronic Tips",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center", 
         }}
       />
 
@@ -217,10 +217,10 @@ function MainStack() {
         name="Términos y Condiciones"
         component={Terminos}
         options={{
-          title: "Términos y Condiciones",
+          title: "Terms and Conditions",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center", 
         }}
       />
 
@@ -228,10 +228,10 @@ function MainStack() {
         name="Guía rápida"
         component={Guia}
         options={{
-          title: "Guía rápida",
+          title: "Quick guide",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center", 
         }}
       />
 
@@ -239,10 +239,10 @@ function MainStack() {
         name="Preguntas frecuentes"
         component={Preguntas}
         options={{
-          title: "Preguntas frecuentes",
+          title: "Frequently Asked Questions",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center", 
         }}
       />
 
@@ -250,10 +250,10 @@ function MainStack() {
         name="Pregunta 1"
         component={Preg_1}
         options={{
-          title: "Pregunta 1",
+          title: "Question 1",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center",
         }}
       />
 
@@ -261,10 +261,10 @@ function MainStack() {
         name="Pregunta 2"
         component={Preg_2}
         options={{
-          title: "Pregunta 2",
+          title: "Question 2",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center", 
         }}
       />
 
@@ -272,10 +272,10 @@ function MainStack() {
         name="Pregunta 3"
         component={Preg_3}
         options={{
-          title: "Pregunta 3",
+          title: "Question 3",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center", 
         }}
       />
 
@@ -283,17 +283,17 @@ function MainStack() {
         name="Pregunta 4"
         component={Preg_4}
         options={{
-          title: "Pregunta 4",
+          title: "Question 4",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
-          headerTitleAlign: "center", // Centra el título en el header
+          headerTitleAlign: "center", 
         }}
       />
       <Stack.Screen
         name="Contacto"
         component={Contact}
         options={{
-          title: "Contacto",
+          title: "Contact us",
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", // Centra el título en el header

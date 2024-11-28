@@ -6,12 +6,12 @@ function TipsScreen({ navigation }) {
   return (
     <Box style={styles.container}>
       {/* Título de la pantalla */}
-      <Text style={styles.title}>Consejos para Reducir el Desperdicio</Text>
+      <Text style={styles.title}>Tips for Reducing Waste</Text>
 
       {/* Fila 1 de botones */}
       <View style={styles.buttonRow}>
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Recetas</Text>
+          <Text style={styles.buttonText}>Recipes</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Tips Comida")}
             style={styles.button}
@@ -21,7 +21,7 @@ function TipsScreen({ navigation }) {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Ropa</Text>
+          <Text style={styles.buttonText}>Rop</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Tips Ropa")}
             style={styles.button}
@@ -34,7 +34,7 @@ function TipsScreen({ navigation }) {
       {/* Fila 2 de botones */}
       <View style={styles.buttonRow}>
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Medicinas</Text>
+          <Text style={styles.buttonText}>Medicines</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Tips Medicinas")}
             style={styles.button}
@@ -44,7 +44,7 @@ function TipsScreen({ navigation }) {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Electrónica</Text>
+          <Text style={styles.buttonText}>Electronics</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Tips Electrónicos")}
             style={styles.button}

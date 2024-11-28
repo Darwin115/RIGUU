@@ -3,8 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Image, TextInput } from "reac
 import { Box } from "native-base";
 
 function HomeScreen({ navigation }) {
-  const [donations, setDonations] = useState(""); // Estado para el cuadro de texto
-
+  const [donations, setDonations] = useState(""); 
   return (
     <Box style={styles.container}>
       {/* Fila 1 de botones */}
@@ -56,12 +55,12 @@ function HomeScreen({ navigation }) {
       <Text style={styles.donationsTitle}>Your last donations</Text>
       <TextInput
         style={styles.donationsInput}
-        placeholder="Texto"
+        placeholder="Aqui estaran la donacion más reciente"
         value={donations}
         onChangeText={setDonations}
       />
       <TouchableOpacity style={styles.donationsButton} onPress={() => navigation.navigate("Tus Donaciones")}>
-        <Text style={styles.donationsButtonText}>Your donations</Text>
+        <Text style={styles.donationsButtonText}>"Your donations"</Text>
       </TouchableOpacity>
     </Box>
   );
@@ -105,7 +104,7 @@ const styles = StyleSheet.create({
   donationsTitle: {
     fontSize: 24,
     fontWeight: "bold",
-    marginTop: 30, // Aumentado para más espacio entre los botones y el texto
+    marginTop: 30, 
     marginBottom: 5,
     color: "#468585",
   },
@@ -123,10 +122,10 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
-    marginTop: 20, // Aumento el margen superior para separar más del cuadro de texto
+    marginTop: 20, 
   },
   donationsButtonText: {
-    color: "#FFFFFF", // Cambiado a blanco solo para este botón
+    color: "#FFFFFF", 
     fontSize: 18,
     fontWeight: "bold",
   },

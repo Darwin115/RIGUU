@@ -18,19 +18,19 @@ export default function LoginScreen({ navigation }) {
       if (user.emailVerified) {
         navigation.navigate('HomeTabs');
       } else {
-        alert('Por favor, verifica tu correo electrónico antes de iniciar sesión.');
+        alert('Please verify your email address before logging in.');
         auth.signOut();
       }
     } catch (error) {
       // Mensajes de error personalizados para hacerlos más claros para el usuario
       if (error.code === 'auth/user-not-found') {
-        setError('No se encontró una cuenta con este correo.');
+        setError('No account was found with this email.');
       } else if (error.code === 'auth/wrong-password') {
-        setError('Contraseña incorrecta. Por favor, intenta nuevamente.');
+        setError('Incorrect password. Please try again.');
       } else if (error.code === 'auth/invalid-email') {
         setError('El formato del correo es inválido.');
       } else {
-        setError('Error al iniciar sesión. Por favor, intenta nuevamente.');
+        setError('The mail format is invalid.');
       }
     }
   };
@@ -38,9 +38,9 @@ export default function LoginScreen({ navigation }) {
   const handlePasswordReset = async () => {
     try {
       await sendPasswordResetEmail(auth, email);
-      setResetMessage('Se ha enviado un correo para restablecer tu contraseña.');
+      setResetMessage('An email has been sent to reset your password.');
     } catch (error) {
-      setError('Por favor, ingresa un correo válido antes de intentar restablecer tu contraseña.');
+      setError('Please enter a valid email address before attempting to reset your password.');
     }
   };
 

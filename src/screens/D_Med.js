@@ -1,33 +1,32 @@
-import React, { useState, useEffect } from "react"; 
+import React, { useState, useEffect } from "react";
 import { Button, View, TextInput, StyleSheet, Text } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import { Picker } from "@react-native-picker/picker";
 
 function D_Med({ navigation }) {
-  const [selectedMedication, setSelectedMedication] = useState("Medicamentos no caducados");
+  const [selectedMedication, setSelectedMedication] = useState("Non-expired medications");
   const [amount, setAmount] = useState("");
-  const [selectedLocation, setSelectedLocation] = useState("Centro de Acopio 1");
+  const [selectedLocation, setSelectedLocation] = useState("Collection Center 1");
 
-  // Coordenadas para los centros de acopio
+
   const locations = {
-    "Centro de Acopio 1": { latitude: 21.885215, longitude: -102.291366 },
-    "Centro de Acopio 2": { latitude: 21.874840, longitude: -102.294024 },
-    "Centro de Acopio 3": { latitude: 21.887001, longitude: -102.303765 },
-    "Centro de Acopio 4": { latitude: 21.873456, longitude: -102.317145 },
+    "Collection Center 1": { latitude: 21.885215, longitude: -102.291366 },
+    "Collection Center 2": { latitude: 21.874840, longitude: -102.294024 },
+    "Collection Center 3": { latitude: 21.887001, longitude: -102.303765 },
+    "Collection Center 4": { latitude: 21.873456, longitude: -102.317145 },
   };
 
-  // Estado para manejar la región del mapa
+  
   const [mapRegion, setMapRegion] = useState({
-    latitude: locations["Centro de Acopio 1"].latitude,
-    longitude: locations["Centro de Acopio 1"].longitude,
+    latitude: locations["Collection Center 1"].latitude,
+    longitude: locations["Collection Center 1"].longitude,
     latitudeDelta: 0.05,
     longitudeDelta: 0.05,
   });
 
-  // Estado para forzar la recarga del mapa cuando cambie la ubicación seleccionada
+  
   const [mapKey, setMapKey] = useState(0);
 
-  // Actualiza la región del mapa cuando cambia la ubicación seleccionada
   useEffect(() => {
     const location = locations[selectedLocation];
     if (location) {
@@ -37,7 +36,7 @@ function D_Med({ navigation }) {
         latitudeDelta: 0.05,
         longitudeDelta: 0.05,
       });
-      // Forzar la recarga del mapa incrementando la clave
+     
       setMapKey((prevKey) => prevKey + 1);
     }
   }, [selectedLocation]);
@@ -46,10 +45,10 @@ function D_Med({ navigation }) {
     <View style={styles.container}>
       <View style={styles.inputRow}>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Tipo de Medicamento</Text>
+          <Text style={styles.inputLabel}>Medication Type</Text>
         </View>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Cantidad</Text>
+          <Text style={styles.inputLabel}>Quantity</Text>
         </View>
       </View>
 
@@ -60,28 +59,28 @@ function D_Med({ navigation }) {
             onValueChange={(itemValue) => setSelectedMedication(itemValue)}
             style={styles.medicationPicker}
           >
-            <Picker.Item label="Medicamentos no caducados" value="Medicamentos no caducados" />
-            <Picker.Item label="Analgésicos" value="Analgésicos" />
-            <Picker.Item label="Antibióticos" value="Antibióticos" />
-            <Picker.Item label="Antiinflamatorios" value="Antiinflamatorios" />
-            <Picker.Item label="Vitaminas" value="Vitaminas" />
-            <Picker.Item label="Medicamentos para la tos" value="Medicamentos para la tos" />
-            <Picker.Item label="Medicamentos para la fiebre" value="Medicamentos para la fiebre" />
-            <Picker.Item label="Medicamentos para la hipertensión" value="Medicamentos para la hipertensión" />
-            <Picker.Item label="Medicamentos para la diabetes" value="Medicamentos para la diabetes" />
-            <Picker.Item label="Suplementos nutricionales" value="Suplementos nutricionales" />
+            <Picker.Item label="Non-expired medications" value="Non-expired medications" />
+            <Picker.Item label="Pain relievers" value="Pain relievers" />
+            <Picker.Item label="Antibiotics" value="Antibiotics" />
+            <Picker.Item label="Anti-inflammatory drugs" value="Anti-inflammatory drugs" />
+            <Picker.Item label="Vitamins" value="Vitamins" />
+            <Picker.Item label="Cough medicines" value="Cough medicines" />
+            <Picker.Item label="Fever reducers" value="Fever reducers" />
+            <Picker.Item label="Hypertension medications" value="Hypertension medications" />
+            <Picker.Item label="Diabetes medications" value="Diabetes medications" />
+            <Picker.Item label="Nutritional supplements" value="Nutritional supplements" />
           </Picker>
         </View>
 
         <TextInput
           style={styles.amountInput}
-          placeholder="Cantidad"
+          placeholder="Quantity"
           value={amount}
           onChangeText={setAmount}
         />
       </View>
 
-      <Text style={styles.mapTitle}>Seleccionar lugar</Text>
+      <Text style={styles.mapTitle}>Select location</Text>
 
       <MapView
         key={mapKey}
@@ -92,13 +91,13 @@ function D_Med({ navigation }) {
           coordinate={locations[selectedLocation]}
           title={selectedLocation}
           description={
-            selectedLocation === "Centro de Acopio 1"
-              ? "Cruz Roja Aguascalientes"
-              : selectedLocation === "Centro de Acopio 2"
-              ? "DIF Estatal Aguascalientes"
-              : selectedLocation === "Centro de Acopio 3"
-              ? "Banco de Alimentos A.C."
-              : "Parroquia del Sagrario"
+            selectedLocation === "Collection Center 1"
+              ? "Red Cross Aguascalientes"
+              : selectedLocation === "Collection Center 2"
+              ? "State DIF Aguascalientes"
+              : selectedLocation === "Collection Center 3"
+              ? "Food Bank A.C."
+              : "Parish of the Sanctuary"
           }
         />
       </MapView>
@@ -109,15 +108,15 @@ function D_Med({ navigation }) {
           onValueChange={(itemValue) => setSelectedLocation(itemValue)}
           style={styles.picker}
         >
-          <Picker.Item label="Centro de Acopio 1 - Cruz Roja Aguascalientes" value="Centro de Acopio 1" />
-          <Picker.Item label="Centro de Acopio 2 - DIF Estatal Aguascalientes" value="Centro de Acopio 2" />
-          <Picker.Item label="Centro de Acopio 3 - Banco de Alimentos A.C." value="Centro de Acopio 3" />
-          <Picker.Item label="Centro de Acopio 4 - Parroquia del Sagrario" value="Centro de Acopio 4" />
+          <Picker.Item label="Collection Center 1 - Cruz Roja Aguascalientes" value="Collection Center 1" />
+          <Picker.Item label="Collection Center 2 - DIF Estatal Aguascalientes" value="Collection Center 2" />
+          <Picker.Item label="Collection Center 3 - Banco de Alimentos A.C." value="Collection Center 3" />
+          <Picker.Item label="Collection Center 4 - Parroquia del Sagrario" value="Collection Center 4" />
         </Picker>
       </View>
 
       <View style={styles.donateButtonContainer}>
-        <Button onPress={() => console.log("Donar presionado")} title="Donar" color="#50B498" />
+        <Button onPress={() => console.log("Donate pressed")} title="Donate" color="#50B498" />
       </View>
     </View>
   );
@@ -217,6 +216,5 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
 });
-
 
 export default D_Med;

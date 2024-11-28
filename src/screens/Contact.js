@@ -1,14 +1,18 @@
-import { Button, View, FlatList, Text, TouchableOpacity } from "react-native"; 
-import { Ionicons } from '@expo/vector-icons'; // Importa Ionicons
+import { Button, View, FlatList, Text, TouchableOpacity, Linking } from "react-native"; 
+import { Ionicons } from '@expo/vector-icons';
 
 function Cont({navigation}) {
   const data = [
-    { id: '1', title: '123456789', icon: 'call' }, // Teléfono de ejemplo
-    { id: '2', title: 'usuario@mail.com', icon: 'mail' }, // Correo de ejemplo
-    { id: '3', title: 'Calle Falsa 123', icon: 'location-outline' }, // Ubicación de ejemplo
-    { id: '4', title: 'facebook.com/usuario', icon: 'logo-facebook' }, // Facebook de ejemplo
-    { id: '5', title: '+1234567890', icon: 'logo-whatsapp' }, // WhatsApp de ejemplo
+    { id: '1', title: '+52 1 449 290 5275', icon: 'call', url: 'tel:+52 1 449 290 5275' },
+    { id: '2', title: 'RIGUU@mail.com', icon: 'mail', url: 'mailto:RIGUU@mail.com' },
+    { id: '3', title: 'AV López Mateos 1801', icon: 'location-outline', url: 'geo:21.8852,-102.2918?q=Avenida+Adolfo+López+Mateos+1801,+Aguascalientes' }, // Dirección del ITA
+    { id: '4', title: 'facebook.com/RIGUU', icon: 'logo-facebook', url: 'fb://page/RIGUU' },
+    { id: '5', title: '+52 1 449 290 5275', icon: 'logo-whatsapp', url: 'whatsapp://send?phone=+52 1 449 290 5275' },
   ];
+
+  const handlePress = (url) => {
+    Linking.openURL(url).catch(err => console.error('Error opening URL:', err));
+  };
 
   return(
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#9CDBA6'}}>
@@ -19,30 +23,29 @@ function Cont({navigation}) {
             style={{ 
               flexDirection: 'row', 
               alignItems: 'center', 
-              marginBottom: 30, // Aumentamos el margen entre los ítems
-              justifyContent: 'center' // Centra los íconos y el texto
+              marginBottom: 30,
+              justifyContent: 'center' 
             }}
-            onPress={() => console.log(`${item.title} pressed`)} // Acción al presionar
+            onPress={() => handlePress(item.url)} // Redirige a la URL correspondiente
           >
             <Ionicons
-              name={item.icon} // Ícono según cada item
-              size={48} // Tamaño del ícono
-              color="white" // Color del ícono
-              style={{ marginRight: 15 }} // Espaciado entre ícono y texto
+              name={item.icon}
+              size={48}
+              color="white"
+              style={{ marginRight: 15 }}
             />
-            <Text style={{ fontSize: 28, fontWeight: 'bold', color: 'white' }}> {/* Texto más grande y blanco */}
+            <Text style={{ fontSize: 28, fontWeight: 'bold', color: 'white' }}>
               {item.title}
             </Text>
           </TouchableOpacity>
         )}
         keyExtractor={item => item.id}
         contentContainerStyle={{ 
-          alignItems: 'center', // Centra el contenido de la lista
-          justifyContent: 'center', // Asegura que los elementos estén centrados en la pantalla
-          flex: 1 // Ocupa todo el espacio disponible
+          alignItems: 'center',
+          justifyContent: 'center',
+          flex: 1
         }} 
       />
-     
     </View>
   );
 }

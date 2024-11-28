@@ -4,15 +4,15 @@ import { View, Text, StyleSheet, Image, Button } from 'react-native';
 function NotificationScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      {/* Foto de perfil con ruta local */}
+      {/* Profile picture with local path */}
       <Image
-        source={require('../../assets/electronics.png')} // Ruta local a la imagen
+        source={require('../../assets/electronics.png')} 
         style={styles.profileImage}
       />
 
-      {/* Información del usuario con salto de línea */}
+      {/* User information with line breaks */}
       <Text style={styles.titleText}>
-        Nombre de Usuario:
+        Username:
       </Text>
       <Text style={styles.text}>
         Juan Pérez
@@ -26,17 +26,17 @@ function NotificationScreen({ navigation }) {
       </Text>
 
       <Text style={styles.titleText}>
-        Teléfono:
+        Phone:
       </Text>
       <Text style={styles.text}>
         +52 123 456 7890
       </Text>
 
       <Text style={styles.titleText}>
-        Localización:
+        Location:
       </Text>
       <Text style={styles.text}>
-        Aguascalientes, México
+        Aguascalientes, Mexico
       </Text>
 
     </View>
@@ -46,30 +46,30 @@ function NotificationScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center', // Centra los elementos horizontalmente
-    justifyContent: 'center', // Centra los elementos verticalmente
+    alignItems: 'center', 
+    justifyContent: 'center',
     backgroundColor: '#9CDBA6',
     padding: 20,
   },
   profileImage: {
     width: 100,
     height: 100,
-    borderRadius: 50, // Hace la imagen redonda
+    borderRadius: 50, 
     marginBottom: 20,
   },
   titleText: {
-    fontSize: 20,  // Tamaño de fuente más grande para los títulos
-    fontWeight: 'bold', // Negritas
+    fontSize: 20,  
+    fontWeight: 'bold', 
     color: '#468585',
     marginBottom: 5,
-    textAlign: 'center', // Centra el texto
+    textAlign: 'center', 
   },
   text: {
     fontSize: 18,
     color: '#468585',
-    marginBottom: 20, // Mayor espacio debajo del texto
-    marginTop: 5, // Espacio arriba del texto
-    textAlign: 'center', // Centra el texto
+    marginBottom: 20, 
+    marginTop: 5, 
+    textAlign: 'center', 
   },
 });
 

@@ -3,16 +3,21 @@ import { TouchableOpacity, View, Text, StyleSheet } from "react-native";
 function Preg_1({ navigation }) {
   return (
     <View style={styles.container}>
-      {/* Caja con el texto de los términos y condiciones */}
       <View style={styles.termsBox}>
         <Text style={styles.termsText}>
-          Pregunta 1: {"\n\n"}
-          Este espacio corresponde a las preguntas más frecuentes
+          What is the function of the Quantity section when making a donation?
+          {"\n\n"}
+          This section is specifically designed to provide details about the
+          products you wish to donate, including the quantity of each type of
+          product and its condition (new, used, etc.).
         </Text>
       </View>
 
-      <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate("Preguntas frecuentes")}>
-        <Text style={styles.buttonText}>Volver atrás</Text>
+      <TouchableOpacity
+        style={styles.buttonContainer}
+        onPress={() => navigation.navigate("Preguntas frecuentes")}
+      >
+        <Text style={styles.buttonText}>Go back</Text>
       </TouchableOpacity>
     </View>
   );
@@ -27,40 +32,38 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   headerText: {
-    fontSize: 28, // Aumenté el tamaño de la fuente
+    fontSize: 28,
     fontWeight: "bold",
     color: "#468585",
     marginBottom: 20,
   },
   termsBox: {
-    backgroundColor: "#468585", // Caja con fondo azul
-    padding: 25, // Mayor padding para hacer la caja más espaciosa
+    backgroundColor: "#468585",
+    padding: 25,
     borderRadius: 10,
     marginBottom: 20,
-    width: "90%", // Ocupa un 90% del ancho de la pantalla
+    width: "90%",
   },
   termsText: {
-    fontSize: 20, // Aumenté el tamaño del texto
-    color: "#fff", // Texto blanco
-    textAlign: "center", // Centra el texto dentro de la caja
+    fontSize: 20,
+    color: "#fff",
+    textAlign: "center",
   },
-
   buttonContainer: {
     backgroundColor: "#50B498",
     padding: 15,
     borderRadius: 10,
     marginBottom: 15,
     alignItems: "center",
-    width: "100%", // Los botones ocupan todo el ancho
-    flexDirection: "row", // Asegura que el ícono y el texto estén en una fila
-    justifyContent: "center", // Centra el contenido
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "center",
   },
-
   buttonText: {
-    color: "#fff", // Cambié el color del texto a blanco
-    fontSize: 18, // Ajusté el tamaño del texto del botón
-    fontWeight: "bold", // Texto en negritas
-  }
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
 });
 
 export default Preg_1;

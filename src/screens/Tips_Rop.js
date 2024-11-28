@@ -2,92 +2,92 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 
-function Tips_Rop() {
-  const [selectedOption, setSelectedOption] = useState("camiseta");
+function Tips_Clothing() {
+  const [selectedOption, setSelectedOption] = useState("t-shirt");
 
   const recommendations = {
-    camiseta: [
-      "Donar la camiseta a organizaciones benéficas o centros de reciclaje.",
-      "Reutilizarla para convertirla en un trapo de limpieza o para otros usos domésticos.",
-      "Transformarla en un accesorio como una bolsa reutilizable.",
-      "Reciclarla para crear nuevos productos textiles o prendas.",
-      "Convertirla en una camiseta para niños, corta la parte inferior y cósela.",
-      "Usarla como tela para hacer nuevos proyectos, como almohadas o cojines.",
-      "Transformarla en una mascarilla o accesorio de moda.",
-      "Venderla o intercambiarla en mercados de segunda mano o tiendas online.",
+    "t-shirt": [
+      "Donate the t-shirt to charity organizations or recycling centers.",
+      "Repurpose it into a cleaning rag or other household uses.",
+      "Transform it into an accessory like a reusable bag.",
+      "Recycle it to create new textile products or garments.",
+      "Turn it into a child's t-shirt by cutting and sewing the bottom part.",
+      "Use it as fabric for new projects, such as pillows or cushions.",
+      "Transform it into a mask or fashion accessory.",
+      "Sell or exchange it in second-hand markets or online stores.",
     ],
-    pantalones: [
-      "Si ya no los usas, donarlos a personas necesitadas o venderlos en tiendas de segunda mano.",
-      "Reutilizarlos para crear otros accesorios, como mochilas o fundas.",
-      "Usarlos como material para manualidades o proyectos de arte.",
-      "Reciclaje textil: llevarlos a centros de reciclaje de ropa.",
-      "Si el material lo permite, usarlos para hacer una bolsa de tela o mochila.",
-      "Convertirlos en pantalones cortos o una falda de mezclilla.",
-      "Donarlos a talleres de costura para proyectos de arte o moda.",
+    pants: [
+      "If no longer used, donate them to people in need or sell them in second-hand stores.",
+      "Repurpose them to create other accessories like backpacks or covers.",
+      "Use them as material for crafts or art projects.",
+      "Textile recycling: take them to clothing recycling centers.",
+      "If the material allows, use them to make a cloth bag or backpack.",
+      "Turn them into shorts or a denim skirt.",
+      "Donate them to sewing workshops for art or fashion projects.",
     ],
-    vestido: [
-      "Si ya no lo usas, donarlo a una organización benéfica o venderlo en tiendas de segunda mano.",
-      "Transformarlo en una blusa o una falda reutilizando el material.",
-      "Convertirlo en una bolsa de tela o accesorios como diademas o bufandas.",
-      "Reciclarlo para hacer cojines, tapetes o otros artículos decorativos.",
-      "Si es de buena calidad, puedes revenderlo en línea o en mercados de segunda mano.",
-      "Reciclaje textil: llevarlo a un centro especializado.",
-      "Reutilizarlo como tela para proyectos de arte o costura.",
+    dress: [
+      "If no longer used, donate it to a charity or sell it in second-hand stores.",
+      "Transform it into a blouse or a skirt by reusing the material.",
+      "Convert it into a cloth bag or accessories like headbands or scarves.",
+      "Recycle it to make cushions, rugs, or other decorative items.",
+      "If of good quality, resell it online or in second-hand markets.",
+      "Textile recycling: take it to a specialized center.",
+      "Reuse it as fabric for art or sewing projects.",
     ],
-    sudadera: [
-      "Donar la sudadera a una organización benéfica o venderla en tiendas de segunda mano.",
-      "Reutilizarla para hacer una manta o un cojín.",
-      "Convertirla en una almohadilla para la oficina o el hogar.",
-      "Transformarla en una bolsa o mochila, reutilizando la tela.",
-      "Reutilizarla como tela para proyectos de costura o artesanía.",
-      "Si está en buen estado, puedes venderla en línea o en mercados de segunda mano.",
-      "Reciclarla a través de centros especializados en reciclaje textil.",
+    sweater: [
+      "Donate the sweater to a charity or sell it in second-hand stores.",
+      "Repurpose it to make a blanket or cushion.",
+      "Turn it into a pad for the office or home.",
+      "Transform it into a bag or backpack by reusing the fabric.",
+      "Reuse it as fabric for sewing or craft projects.",
+      "If in good condition, sell it online or in second-hand markets.",
+      "Recycle it through specialized textile recycling centers.",
     ],
-    pijama: [
-      "Si está en buen estado, donar o vender el conjunto de pijama.",
-      "Reutilizar la tela para hacer otros proyectos como fundas o cojines.",
-      "Transformarlo en trapos para limpieza o utilizarlo para otros usos domésticos.",
-      "Convertir la parte superior en una blusa o la parte inferior en pantalones cortos.",
-      "Reciclarlo para proyectos de manualidades o arte.",
-      "Si la tela es adecuada, reutilizarla para hacer una bolsa o mochila.",
-      "Donar o intercambiar en mercados de segunda mano.",
+    pajamas: [
+      "If in good condition, donate or sell the pajama set.",
+      "Repurpose the fabric to create other projects like covers or cushions.",
+      "Transform it into cleaning rags or use it for other household purposes.",
+      "Turn the top into a blouse or the bottom into shorts.",
+      "Recycle it for craft or art projects.",
+      "If the fabric is suitable, repurpose it to make a bag or backpack.",
+      "Donate or exchange it in second-hand markets.",
     ],
-    calcetines: [
-      "Reutilizarlos como trapos para limpiar o hacer manualidades.",
-      "Convertirlos en muñecos o juguetes para niños.",
-      "Usarlos como material para proyectos de arte o costura.",
-      "Donarlos si están en buen estado.",
-      "Transformarlos en un bolso o accesorio de moda.",
-      "Reciclar los calcetines a través de centros de reciclaje textil.",
+    socks: [
+      "Reuse them as cleaning rags or for crafting.",
+      "Turn them into dolls or toys for children.",
+      "Use them as material for art or sewing projects.",
+      "Donate them if in good condition.",
+      "Transform them into a bag or fashion accessory.",
+      "Recycle socks through textile recycling centers.",
     ],
-    zapatos: [
-      "Si están en buen estado, donar los zapatos a personas necesitadas.",
-      "Venderlos en mercados de segunda mano o en línea.",
-      "Reutilizarlos como material para proyectos de arte o manualidades.",
-      "Reciclaje de zapatos: llevarlos a un centro especializado.",
-      "Transformarlos en un accesorio, como una maceta decorativa o un colgante.",
+    shoes: [
+      "If in good condition, donate the shoes to those in need.",
+      "Sell them in second-hand markets or online.",
+      "Repurpose them as material for art or crafting projects.",
+      "Shoe recycling: take them to a specialized center.",
+      "Transform them into an accessory, such as a decorative pot or pendant.",
     ],
-    abrigo: [
-      "Si está en buen estado, donar el abrigo a organizaciones benéficas o venderlo en tiendas de segunda mano.",
-      "Reutilizar el material para hacer bolsas, mochilas o nuevos accesorios.",
-      "Convertirlo en una manta o cobija para el hogar.",
-      "Reciclaje textil: llevarlo a un centro especializado.",
-      "Usarlo como tela para proyectos de costura o manualidades.",
-      "Reutilizarlo para hacer fundas o protectores para muebles.",
+    coat: [
+      "If in good condition, donate the coat to charities or sell it in second-hand stores.",
+      "Repurpose the material to make bags, backpacks, or new accessories.",
+      "Convert it into a blanket for home use.",
+      "Textile recycling: take it to a specialized center.",
+      "Use it as fabric for sewing or craft projects.",
+      "Repurpose it to make covers or protectors for furniture.",
     ],
-    falda: [
-      "Si está en buen estado, donar la falda o venderla en tiendas de segunda mano.",
-      "Transformarla en una blusa o un top reutilizando la tela.",
-      "Convertirla en una bolsa de tela o accesorios como diademas o bufandas.",
-      "Reutilizarla como material para proyectos de costura o arte.",
-      "Reciclarla en un centro especializado en reciclaje textil.",
+    skirt: [
+      "If in good condition, donate the skirt or sell it in second-hand stores.",
+      "Transform it into a blouse or top by reusing the fabric.",
+      "Convert it into a cloth bag or accessories like headbands or scarves.",
+      "Reuse it as material for sewing or art projects.",
+      "Recycle it at a specialized textile recycling center.",
     ],
-    traje: [
-      "Si está en buen estado, donar el traje o venderlo en tiendas de segunda mano.",
-      "Transformarlo en una falda o una blusa, reutilizando la tela.",
-      "Reciclarlo en proyectos de arte o costura.",
-      "Donarlo a una organización benéfica para personas que lo necesiten.",
-      "Reutilizarlo para hacer accesorios como mochilas o estuches.",
+    suit: [
+      "If in good condition, donate the suit or sell it in second-hand stores.",
+      "Transform it into a skirt or blouse by reusing the fabric.",
+      "Recycle it for art or sewing projects.",
+      "Donate it to a charity for those in need.",
+      "Repurpose it to create accessories like backpacks or cases.",
     ],
   };
 
@@ -98,7 +98,7 @@ function Tips_Rop() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
-        Selecciona un tipo de ropa para obtener recomendaciones personalizadas
+        Select a type of clothing to get personalized recommendations
       </Text>
 
       <View style={styles.pickerContainer}>
@@ -107,21 +107,21 @@ function Tips_Rop() {
           style={styles.picker}
           onValueChange={handleOptionChange}
         >
-          <Picker.Item label="Camiseta" value="camiseta" />
-          <Picker.Item label="Pantalones" value="pantalones" />
-          <Picker.Item label="Vestido" value="vestido" />
-          <Picker.Item label="Sudadera" value="sudadera" />
-          <Picker.Item label="Pijama" value="pijama" />
-          <Picker.Item label="Calcetines" value="calcetines" />
-          <Picker.Item label="Zapatos" value="zapatos" />
-          <Picker.Item label="Abrigo" value="abrigo" />
-          <Picker.Item label="Falda" value="falda" />
-          <Picker.Item label="Traje" value="traje" />
+          <Picker.Item label="T-Shirt" value="t-shirt" />
+          <Picker.Item label="Pants" value="pants" />
+          <Picker.Item label="Dress" value="dress" />
+          <Picker.Item label="Sweater" value="sweater" />
+          <Picker.Item label="Pajamas" value="pajamas" />
+          <Picker.Item label="Socks" value="socks" />
+          <Picker.Item label="Shoes" value="shoes" />
+          <Picker.Item label="Coat" value="coat" />
+          <Picker.Item label="Skirt" value="skirt" />
+          <Picker.Item label="Suit" value="suit" />
         </Picker>
       </View>
 
       <Text style={styles.subtitle}>
-        Recomendaciones para {selectedOption.charAt(0).toUpperCase() + selectedOption.slice(1)}
+        Recommendations for {selectedOption.charAt(0).toUpperCase() + selectedOption.slice(1)}
       </Text>
 
       <ScrollView style={styles.recommendationsList}>
@@ -134,7 +134,7 @@ function Tips_Rop() {
             </View>
           ))
         ) : (
-          <Text style={styles.recommendation}>No hay recomendaciones disponibles para esta opción.</Text>
+          <Text style={styles.recommendation}>No recommendations available for this option.</Text>
         )}
       </ScrollView>
     </View>
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#FFFFFF", // Subtítulo en blanco
+    color: "#FFFFFF",
     textAlign: "center",
     marginBottom: 1,
     paddingHorizontal: 25,
@@ -178,8 +178,8 @@ const styles = StyleSheet.create({
     width: "89%",
     marginBottom: 20,
     overflow: "hidden",
-    backgroundColor: "#fff", 
-    shadowColor: "#000", 
+    backgroundColor: "#fff",
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.1,
     shadowRadius: 5,
@@ -195,12 +195,12 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
   },
   recommendationItem: {
-    backgroundColor: "#468585", // Fondo blanco para cada recomendación
+    backgroundColor: "#468585",
     padding: 10,
     marginBottom: 10,
     borderRadius: 5,
     borderWidth: 1,
-    borderColor: "#ddd", // Bordes grises para separar las recomendaciones
+    borderColor: "#ddd",
   },
   recommendation: {
     fontSize: 16,
@@ -209,4 +209,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Tips_Rop;
+export default Tips_Clothing;

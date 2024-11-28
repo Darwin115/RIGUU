@@ -3,16 +3,15 @@ import { TouchableOpacity, View, Text, StyleSheet } from "react-native";
 function Preg_2({ navigation }) {
   return (
     <View style={styles.container}>
-      {/* Caja con el texto de los términos y condiciones */}
       <View style={styles.termsBox}>
         <Text style={styles.termsText}>
-          Pregunta 2: {"\n\n"}
-          Este espacio corresponde a las preguntas más frecuentes
+          How can I view my donations?{"\n\n"}
+          You can view your donations in the “Donations” menu, under the “Latest Donations” section. There they will be displayed in order, so you can review the donations you have made.
         </Text>
       </View>
 
       <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate("Preguntas frecuentes")}>
-        <Text style={styles.buttonText}>Volver atrás</Text>
+        <Text style={styles.buttonText}>Go back</Text>
       </TouchableOpacity>
     </View>
   );
@@ -27,39 +26,37 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   headerText: {
-    fontSize: 28, // Aumenté el tamaño de la fuente
+    fontSize: 28,
     fontWeight: "bold",
     color: "#468585",
     marginBottom: 20,
   },
   termsBox: {
-    backgroundColor: "#468585", // Caja con fondo azul
-    padding: 25, // Mayor padding para hacer la caja más espaciosa
+    backgroundColor: "#468585",
+    padding: 25,
     borderRadius: 10,
     marginBottom: 20,
-    width: "90%", // Ocupa un 90% del ancho de la pantalla
+    width: "90%",
   },
   termsText: {
-    fontSize: 20, // Aumenté el tamaño del texto
-    color: "#fff", // Texto blanco
-    textAlign: "center", // Centra el texto dentro de la caja
+    fontSize: 20,
+    color: "#fff",
+    textAlign: "center",
   },
-
   buttonContainer: {
     backgroundColor: "#50B498",
     padding: 15,
     borderRadius: 10,
     marginBottom: 15,
     alignItems: "center",
-    width: "100%", // Los botones ocupan todo el ancho
-    flexDirection: "row", // Asegura que el ícono y el texto estén en una fila
-    justifyContent: "center", // Centra el contenido
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "center",
   },
-
   buttonText: {
-    color: "#fff", // Cambié el color del texto a blanco
-    fontSize: 18, // Ajusté el tamaño del texto del botón
-    fontWeight: "bold", // Texto en negritas
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
   }
 });
 

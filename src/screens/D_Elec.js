@@ -1,33 +1,29 @@
-import React, { useState, useEffect } from "react"; 
+import React, { useState, useEffect } from "react";
 import { Button, View, TextInput, StyleSheet, Text } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import { Picker } from "@react-native-picker/picker";
 
 function D_Elec({ navigation }) {
-  const [selectedElectronic, setSelectedElectronic] = useState("Teléfonos Móviles");
+  const [selectedElectronic, setSelectedElectronic] = useState("Mobile Phones");
   const [amount, setAmount] = useState("");
-  const [selectedLocation, setSelectedLocation] = useState("Centro de Acopio 1");
+  const [selectedLocation, setSelectedLocation] = useState("Collection Center 1");
 
-  // Coordenadas para los centros de acopio
   const locations = {
-    "Centro de Acopio 1": { latitude: 21.885215, longitude: -102.291366 },
-    "Centro de Acopio 2": { latitude: 21.874840, longitude: -102.294024 },
-    "Centro de Acopio 3": { latitude: 21.887001, longitude: -102.303765 },
-    "Centro de Acopio 4": { latitude: 21.873456, longitude: -102.317145 },
+    "Collection Center 1": { latitude: 21.885215, longitude: -102.291366 },
+    "Collection Center 2": { latitude: 21.874840, longitude: -102.294024 },
+    "Collection Center 3": { latitude: 21.887001, longitude: -102.303765 },
+    "Collection Center 4": { latitude: 21.873456, longitude: -102.317145 },
   };
 
-  // Estado para manejar la región del mapa
   const [mapRegion, setMapRegion] = useState({
-    latitude: locations["Centro de Acopio 1"].latitude,
-    longitude: locations["Centro de Acopio 1"].longitude,
+    latitude: locations["Collection Center 1"].latitude,
+    longitude: locations["Collection Center 1"].longitude,
     latitudeDelta: 0.05,
     longitudeDelta: 0.05,
   });
 
-  // Estado para forzar la recarga del mapa cuando cambie la ubicación seleccionada
   const [mapKey, setMapKey] = useState(0);
 
-  // Actualiza la región del mapa cuando cambia la ubicación seleccionada
   useEffect(() => {
     const location = locations[selectedLocation];
     if (location) {
@@ -37,7 +33,6 @@ function D_Elec({ navigation }) {
         latitudeDelta: 0.05,
         longitudeDelta: 0.05,
       });
-      // Forzar la recarga del mapa incrementando la clave
       setMapKey((prevKey) => prevKey + 1);
     }
   }, [selectedLocation]);
@@ -46,10 +41,10 @@ function D_Elec({ navigation }) {
     <View style={styles.container}>
       <View style={styles.inputRow}>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Tipo de Aparato Electrónico</Text>
+          <Text style={styles.inputLabel}>Type of Electronic Device</Text>
         </View>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Cantidad</Text>
+          <Text style={styles.inputLabel}>Quantity</Text>
         </View>
       </View>
 
@@ -60,27 +55,27 @@ function D_Elec({ navigation }) {
             onValueChange={(itemValue) => setSelectedElectronic(itemValue)}
             style={styles.electronicPicker}
           >
-            <Picker.Item label="Teléfonos Móviles" value="Teléfonos Móviles" />
-            <Picker.Item label="Computadoras Portátiles" value="Computadoras Portátiles" />
-            <Picker.Item label="Televisores" value="Televisores" />
-            <Picker.Item label="Cámaras Fotográficas" value="Cámaras Fotográficas" />
+            <Picker.Item label="Mobile Phones" value="Mobile Phones" />
+            <Picker.Item label="Laptops" value="Laptops" />
+            <Picker.Item label="Televisions" value="Televisions" />
+            <Picker.Item label="Cameras" value="Cameras" />
             <Picker.Item label="Radios" value="Radios" />
-            <Picker.Item label="Cargadores" value="Cargadores" />
-            <Picker.Item label="Auriculares" value="Auriculares" />
-            <Picker.Item label="Consolas de Videojuegos" value="Consolas de Videojuegos" />
-            <Picker.Item label="Electrodomésticos Pequeños" value="Electrodomésticos Pequeños" />
+            <Picker.Item label="Chargers" value="Chargers" />
+            <Picker.Item label="Headphones" value="Headphones" />
+            <Picker.Item label="Game Consoles" value="Game Consoles" />
+            <Picker.Item label="Small Appliances" value="Small Appliances" />
           </Picker>
         </View>
 
         <TextInput
           style={styles.amountInput}
-          placeholder="Cantidad"
+          placeholder="Quantity"
           value={amount}
           onChangeText={setAmount}
         />
       </View>
 
-      <Text style={styles.mapTitle}>Seleccionar lugar</Text>
+      <Text style={styles.mapTitle}>Select Location</Text>
 
       <MapView
         key={mapKey}
@@ -91,13 +86,13 @@ function D_Elec({ navigation }) {
           coordinate={locations[selectedLocation]}
           title={selectedLocation}
           description={
-            selectedLocation === "Centro de Acopio 1"
-              ? "Cruz Roja Aguascalientes"
-              : selectedLocation === "Centro de Acopio 2"
-              ? "DIF Estatal Aguascalientes"
-              : selectedLocation === "Centro de Acopio 3"
-              ? "Banco de Alimentos A.C."
-              : "Parroquia del Sagrario"
+            selectedLocation === "Collection Center 1"
+              ? "Red Cross Aguascalientes"
+              : selectedLocation === "Collection Center 2"
+              ? "State DIF Aguascalientes"
+              : selectedLocation === "Collection Center 3"
+              ? "Food Bank A.C."
+              : "Sagrario Parish"
           }
         />
       </MapView>
@@ -108,15 +103,15 @@ function D_Elec({ navigation }) {
           onValueChange={(itemValue) => setSelectedLocation(itemValue)}
           style={styles.picker}
         >
-          <Picker.Item label="Centro de Acopio 1 - Cruz Roja Aguascalientes" value="Centro de Acopio 1" />
-          <Picker.Item label="Centro de Acopio 2 - DIF Estatal Aguascalientes" value="Centro de Acopio 2" />
-          <Picker.Item label="Centro de Acopio 3 - Banco de Alimentos A.C." value="Centro de Acopio 3" />
-          <Picker.Item label="Centro de Acopio 4 - Parroquia del Sagrario" value="Centro de Acopio 4" />
+          <Picker.Item label="Collection Center 1 - Cruz Roja Aguascalientes" value="Collection Center 1" />
+          <Picker.Item label="Collection Center 2 - DIF Estatal Aguascalientes" value="Collection Center 2" />
+          <Picker.Item label="Collection Center 3 - Banco de Alimentos A.C." value="Collection Center 3" />
+          <Picker.Item label="Collection Center 4 - Parroquia del Sagrario" value="Collection Center 4" />
         </Picker>
       </View>
 
       <View style={styles.donateButtonContainer}>
-        <Button onPress={() => console.log("Donar presionado")} title="Donar" color="#50B498" />
+        <Button onPress={() => console.log("Donate pressed")} title="Donate" color="#50B498" />
       </View>
     </View>
   );
@@ -216,6 +211,5 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
 });
-
 
 export default D_Elec;

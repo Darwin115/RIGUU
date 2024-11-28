@@ -3,31 +3,27 @@ import { Button, View, TextInput, StyleSheet, Text } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import { Picker } from "@react-native-picker/picker";
 
-function  D_Comida({ navigation }) {
-  const [selectedFood, setSelectedFood] = useState("Enlatados");
+function D_Food({ navigation }) {
+  const [selectedFood, setSelectedFood] = useState("Canned Food");
   const [amount, setAmount] = useState("");
-  const [selectedLocation, setSelectedLocation] = useState("Centro de Acopio 1");
+  const [selectedLocation, setSelectedLocation] = useState("Collection Center 1");
 
-  // Coordenadas para los centros de acopio
   const locations = {
-    "Centro de Acopio 1": { latitude: 21.885215, longitude: -102.291366 },
-    "Centro de Acopio 2": { latitude: 21.874840, longitude: -102.294024 },
-    "Centro de Acopio 3": { latitude: 21.887001, longitude: -102.303765 },
-    "Centro de Acopio 4": { latitude: 21.873456, longitude: -102.317145 },
+    "Collection Center 1": { latitude: 21.885215, longitude: -102.291366 },
+    "Collection Center 2": { latitude: 21.874840, longitude: -102.294024 },
+    "Collection Center 3": { latitude: 21.887001, longitude: -102.303765 },
+    "Collection Center 4": { latitude: 21.873456, longitude: -102.317145 },
   };
 
-  // Estado para manejar la región del mapa
   const [mapRegion, setMapRegion] = useState({
-    latitude: locations["Centro de Acopio 1"].latitude,
-    longitude: locations["Centro de Acopio 1"].longitude,
+    latitude: locations["Collection Center 1"].latitude,
+    longitude: locations["Collection Center 1"].longitude,
     latitudeDelta: 0.05,
     longitudeDelta: 0.05,
   });
 
-  // Estado para forzar la recarga del mapa cuando cambie la ubicación seleccionada
   const [mapKey, setMapKey] = useState(0);
 
-  // Actualiza la región del mapa cuando cambia la ubicación seleccionada
   useEffect(() => {
     const location = locations[selectedLocation];
     if (location) {
@@ -37,19 +33,19 @@ function  D_Comida({ navigation }) {
         latitudeDelta: 0.05,
         longitudeDelta: 0.05,
       });
-      // Forzar la recarga del mapa incrementando la clave
+      
       setMapKey((prevKey) => prevKey + 1);
     }
-  }, [selectedLocation]); // Esto asegura que la región se actualice correctamente cuando cambie la ubicación
+  }, [selectedLocation]);
 
   return (
     <View style={styles.container}>
       <View style={styles.inputRow}>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Tipo de Alimento</Text>
+          <Text style={styles.inputLabel}>Type of Food</Text>
         </View>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Cantidad</Text>
+          <Text style={styles.inputLabel}>Amount</Text>
         </View>
       </View>
 
@@ -60,43 +56,43 @@ function  D_Comida({ navigation }) {
             onValueChange={(itemValue) => setSelectedFood(itemValue)}
             style={styles.foodPicker}
           >
-            <Picker.Item label="Enlatados" value="Enlatados" />
-            <Picker.Item label="Cereales" value="Cereales" />
-            <Picker.Item label="Agua Embotellada" value="Agua Embotellada" />
-            <Picker.Item label="Arroz" value="Arroz" />
+            <Picker.Item label="Canned Food" value="Canned Food" />
+            <Picker.Item label="Cereals" value="Cereals" />
+            <Picker.Item label="Bottled Water" value="Bottled Water" />
+            <Picker.Item label="Rice" value="Rice" />
             <Picker.Item label="Pasta" value="Pasta" />
-            <Picker.Item label="Frutas Secas" value="Frutas Secas" />
-            <Picker.Item label="Aceite" value="Aceite" />
-            <Picker.Item label="Azúcar" value="Azúcar" />
+            <Picker.Item label="Dried Fruits" value="Dried Fruits" />
+            <Picker.Item label="Oil" value="Oil" />
+            <Picker.Item label="Sugar" value="Sugar" />
           </Picker>
         </View>
 
         <TextInput
           style={styles.amountInput}
-          placeholder="Cantidad"
+          placeholder="Amount"
           value={amount}
           onChangeText={setAmount}
         />
       </View>
 
-      <Text style={styles.mapTitle}>Seleccionar lugar</Text>
+      <Text style={styles.mapTitle}>Select Location</Text>
 
       <MapView
-        key={mapKey} // Clave dinámica para forzar la recarga del mapa
+        key={mapKey}
         style={styles.mapContainer}
-        region={mapRegion} // Usamos 'region' para asegurar que el mapa siga la región seleccionada
+        region={mapRegion}
       >
         <Marker
           coordinate={locations[selectedLocation]}
           title={selectedLocation}
           description={
-            selectedLocation === "Centro de Acopio 1"
-              ? "Cruz Roja Aguascalientes"
-              : selectedLocation === "Centro de Acopio 2"
-              ? "DIF Estatal Aguascalientes"
-              : selectedLocation === "Centro de Acopio 3"
-              ? "Banco de Alimentos A.C."
-              : "Parroquia del Sagrario"
+            selectedLocation === "Collection Center 1"
+              ? "Red Cross Aguascalientes"
+              : selectedLocation === "Collection Center 2"
+              ? "State DIF Aguascalientes"
+              : selectedLocation === "Collection Center 3"
+              ? "Food Bank A.C."
+              : "Sagrario Parish"
           }
         />
       </MapView>
@@ -107,15 +103,15 @@ function  D_Comida({ navigation }) {
           onValueChange={(itemValue) => setSelectedLocation(itemValue)}
           style={styles.picker}
         >
-          <Picker.Item label="Centro de Acopio 1 - Cruz Roja Aguascalientes" value="Centro de Acopio 1" />
-          <Picker.Item label="Centro de Acopio 2 - DIF Estatal Aguascalientes" value="Centro de Acopio 2" />
-          <Picker.Item label="Centro de Acopio 3 - Banco de Alimentos A.C." value="Centro de Acopio 3" />
-          <Picker.Item label="Centro de Acopio 4 - Parroquia del Sagrario" value="Centro de Acopio 4" />
+          <Picker.Item label="Collection Center 1 - Cruz Roja Aguascalientes" value="Collection Center 1" />
+          <Picker.Item label="Collection Center 2 - DIF Estatal Aguascalientes" value="Collection Center 2" />
+          <Picker.Item label="Collection Center 3 - Banco de Alimentos A.C." value="Collection Center 3" />
+          <Picker.Item label="Collection Center 4 - Parroquia del Sagrario" value="Collection Center 4" />
         </Picker>
       </View>
 
       <View style={styles.donateButtonContainer}>
-        <Button onPress={() => console.log("Donar presionado")} title="Donar" color="#50B498" />
+        <Button onPress={() => console.log("Donate pressed")} title="Donate" color="#50B498" />
       </View>
     </View>
   );
@@ -216,7 +212,4 @@ const styles = StyleSheet.create({
   },
 });
 
-
-
-
-export default D_Comida;
+export default D_Food;
