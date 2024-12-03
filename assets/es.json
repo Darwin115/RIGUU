@@ -1,0 +1,207 @@
+{
+  "app": {
+    "login": "Iniciar sesión",
+    "register": "Registrar",
+    "home": "Inicio",
+    "tips": "Consejos",
+    "settings": "Configuración",
+    "noti": "Perfil de usuario",
+    "food": "Comida",
+    "clothes": "Ropa",
+    "med": "Medicina",
+    "elec": "Electrónicos",
+    "your_donations": "Tus donaciones",
+    "tips_food": "Consejos sobre comida",
+    "tips_clothes": "Consejos sobre ropa",
+    "tips_med": "Consejos sobre medicinas",
+    "tips_elec": "Consejos sobre electrónicos",
+    "terms": "Términos y condiciones",
+    "guide": "Guía rápida",
+    "faq": "Preguntas frecuentes",
+    "q1": "Pregunta 1",
+    "q2": "Pregunta 2",
+    "q3": "Pregunta 3",
+    "q4": "Pregunta 4",
+    "contact": "Contáctanos",
+    "donations": "Donaciones",
+    "tips_and_recipes": "Consejos y recetas"
+  },
+    "login": {
+      "email": "Correo electrónico",
+      "email_placeholder": "Ingresa tu correo",
+      "password": "Contraseña",
+      "password_placeholder": "Ingresa tu contraseña",
+      "forgot_password": "¿Olvidaste tu contraseña?",
+      "login_button": "INICIAR SESIÓN",
+      "register": "Crear cuenta",
+      "error_user_not_found": "No se encontró una cuenta con este correo.",
+      "error_wrong_password": "Contraseña incorrecta. Por favor, intenta nuevamente.",
+      "error_invalid_email": "El formato del correo es inválido.",
+      "error_generic": "Error al iniciar sesión. Por favor, intenta nuevamente.",
+      "error_reset_password": "Por favor, ingresa un correo válido antes de intentar restablecer tu contraseña.",
+      "reset_password_success": "Se ha enviado un correo para restablecer tu contraseña.",
+      "email_verification_alert": "Por favor, verifica tu correo electrónico antes de iniciar sesión."
+    },
+    "register": {
+        "title": "REGISTRAR",
+        "name_label": "Nombre",
+        "name_placeholder": "Ingresa tu nombre",
+        "email_label": "Correo electrónico",
+        "email_placeholder": "Ingresa tu correo",
+        "password_label": "Contraseña",
+        "password_placeholder": "Ingresa tu contraseña",
+        "register_button": "REGISTRAR",
+        "error_email_in_use": "El correo ya está en uso. Intenta con otro.",
+        "error_invalid_email": "El formato del correo es inválido.",
+        "error_weak_password": "La contraseña es muy débil. Usa al menos 6 caracteres.",
+        "error_generic": "Error al registrar. Intenta nuevamente.",
+        "success_verification_email": "Correo de verificación enviado. Revisa tu bandeja de entrada."
+      },
+      "home": {
+    "categories": {
+      "food": "Comida",
+      "clothes": "Ropa",
+      "medicine": "Medicina",
+      "electronics": "Electrónicos"
+    },
+    "your_last_donations": "Tus últimas donaciones",
+    "donations_placeholder": "Aqui estaran tus donaciones",
+    "donations_button": "Tus donaciones"
+  },
+  "guide": {
+    "title": "Guía en video",
+    "buttons": {
+      "play": "Reproducir",
+      "pause": "Pausar",
+      "restart": "Reiniciar"
+    }
+  },
+  "question_1": {
+    "title": "¿Cuál es la función de la sección de Cantidad al realizar una donación?",
+    "content": "Esta sección está diseñada específicamente para proporcionar detalles sobre los productos que deseas donar, incluyendo la cantidad de cada tipo de producto y su estado (nuevo, usado, etc.).",
+    "button": "Regresar"
+  },
+  "question_2": {
+    "title": "¿Cómo puedo ver mis donaciones?",
+    "content": "Puedes ver tus donaciones en el menú “Donaciones”, en la sección “Últimas Donaciones”. Allí se mostrarán en orden para que puedas revisar las donaciones que has realizado.",
+    "button": "Regresar"
+  },
+  "question_3": {
+    "title": "¿Cómo funciona la sección de donaciones de alimentos?",
+    "content": "En esta sección, tendrás que seleccionar tres tipos de alimentos de los disponibles. Con esta información, podrás obtener una receta específica basada en los alimentos que elijas.",
+    "button": "Regresar"
+  },
+  "question_4": {
+    "title": "¿Cómo puedo contactar al soporte técnico?",
+    "content": "Para contactar al soporte técnico, hay una sección en la pantalla de configuración que ofrece varias formas de contacto. Puedes elegir la opción que sea más conveniente para recibir asistencia.",
+    "button": "Regresar"
+  },
+  "questions": {
+    "question1": "Pregunta 1",
+    "question2": "Pregunta 2",
+    "question3": "Pregunta 3",
+    "question4": "Pregunta 4"
+  },
+  "settings": {
+    "profile": "Perfil",
+    "terms": "Términos y Condiciones",
+    "guide": "Guía rápida",
+    "faq": "Preguntas frecuentes",
+    "contact": "Contáctanos",
+    "logout": "Cerrar sesión",
+    "language": "Idioma",
+    "english": "Inglés",
+    "spanish": "Español"
+  },
+  "terms": {
+    "acceptance": "1. Aceptación: Al usar RIGUU, aceptas estos términos. Si no estás de acuerdo, no uses la aplicación.",
+    "use_of_application": "2. Uso de la aplicación: RIGUU es para uso personal, no comercial. Debes usarla de manera ética.",
+    "intellectual_property": "3. Propiedad Intelectual: Todo el contenido de RIGUU pertenece a la aplicación o a sus licenciantes. No puedes copiarlo sin permiso.",
+    "privacy": "4. Privacidad: RIGUU recopila datos de acuerdo con su política de privacidad. Tu información está protegida.",
+    "location": "5. Ubicación: La aplicación puede usar tu ubicación para mostrar centros de acopio cercanos."
+  },
+  "tips_elec": {
+    "title": "Selecciona un dispositivo electrónico para obtener recomendaciones personalizadas",
+  "subtitle": "Recomendaciones para ",
+  "phone": "Teléfono",
+  "laptop": "Laptop",
+  "tablet": "Tableta",
+  "television": "Televisión",
+  "headphones": "Auriculares",
+  "camera": "Cámara",
+  "console": "Consola",
+  "smartwatch": "Reloj inteligente",
+  "router": "Router",
+  "no_recommendations": "No hay recomendaciones disponibles para esta opción.",
+  "recommendations": {
+    "phone": [
+      "Dona el teléfono a personas necesitadas o a organizaciones benéficas.",
+      "Recicla el teléfono en un centro especializado.",
+      "Véndelo en línea o en mercados de segunda mano.",
+      "Reutilízalo como teléfono de respaldo o para proyectos DIY.",
+      "Dona partes del teléfono, como la batería o la pantalla, a talleres de reparación.",
+      "Convierte el teléfono en una cámara de seguridad o dispositivo de monitoreo.",
+      "Recicla sus componentes como metales y plásticos a través de programas de reciclaje."
+    ],
+    "laptop": [
+      "Si está en buen estado, dona la laptop a una organización o véndela en tiendas de segunda mano.",
+      "Reutilízala para proyectos tecnológicos o educativos.",
+      "Recíclala en un centro especializado en dispositivos electrónicos.",
+      "Véndela en plataformas en línea o tiendas locales.",
+      "Úsala como un centro de entretenimiento en casa o para niños.",
+      "Dona accesorios como teclados y cargadores a quienes los necesiten."
+    ],
+    "tablet": [
+      "Dona la tablet a alguien necesitado o a una institución educativa.",
+      "Recíclala adecuadamente en un centro de reciclaje especializado.",
+      "Reutilízala como lector de libros electrónicos o para proyectos educativos.",
+      "Conviértela en un dispositivo de entretenimiento o para control de hogar inteligente.",
+      "Véndela en mercados de segunda mano o plataformas de compra-venta.",
+      "Úsala como dispositivo de música o en proyectos de arte digital."
+    ],
+    "television": [
+      "Dona la televisión a una organización benéfica o véndela en tiendas de segunda mano.",
+      "Reutilízala como monitor de computadora o para videojuegos.",
+      "Recíclala en centros especializados para una disposición adecuada de sus partes.",
+      "Vende partes de la televisión, como la pantalla o componentes electrónicos.",
+      "Convierte la televisión en un proyecto DIY, como un marco interactivo o pantalla de información."
+    ],
+    "headphones": [
+      "Si están en buen estado, dona los audífonos o véndelos de segunda mano.",
+      "Reutilízalos en proyectos de sonido o para reparar otros dispositivos.",
+      "Recicla los componentes electrónicos en un centro especializado.",
+      "Usa las partes para hacer accesorios de moda o decoraciones.",
+      "Vende partes como cables o almohadillas para su uso en otros dispositivos."
+    ],
+    "camera": [
+      "Dona la cámara a una institución educativa o a un fotógrafo que la necesite.",
+      "Vende la cámara en plataformas de segunda mano.",
+      "Recíclala en programas especializados en electrónica.",
+      "Reutilízala para proyectos de grabación o fotografía en casa.",
+      "Úsala para vigilancia en el hogar o monitoreo de eventos."
+    ],
+    "console": [
+      "Si está en buen estado, dona la consola a quienes no tienen acceso a una.",
+      "Véndela en mercados de segunda mano o en línea.",
+      "Recíclala en un centro especializado en dispositivos electrónicos.",
+      "Reutilízala para organizar un centro de entretenimiento o para videojuegos retro.",
+      "Intercámbiala en tiendas de videojuegos o plataformas en línea."
+    ],
+    "smartwatch": [
+      "Dona el smartwatch a alguien necesitado o véndelo de segunda mano.",
+      "Reutilízalo para proyectos de monitoreo de salud o personales.",
+      "Recíclalo en un centro especializado en dispositivos electrónicos.",
+      "Vende partes como correas o baterías para reutilización.",
+      "Convierte el smartwatch en un accesorio de moda o regálalo como parte de un kit de salud."
+    ],
+    "router": [
+      "Si ya no lo usas, dóna el router a una organización necesitada.",
+      "Recíclalo adecuadamente en un centro especializado en tecnología.",
+      "Reutilízalo como un punto de acceso Wi-Fi en otra área de la casa u oficina.",
+      "Véndelo si está en buen estado a través de plataformas en línea.",
+      "Desármalo para proyectos tecnológicos o reparaciones."
+    ]
+  }
+  }
+}
+  

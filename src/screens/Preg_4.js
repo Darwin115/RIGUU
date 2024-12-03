@@ -1,17 +1,16 @@
 import { TouchableOpacity, View, Text, StyleSheet } from "react-native";
-
+import { useTranslation } from "react-i18next";
 function Preg_4({ navigation }) {
+  const { t } = useTranslation();
   return (
     <View style={styles.container}>
       <View style={styles.termsBox}>
         <Text style={styles.termsText}>
-          How can I contact technical support?{"\n\n"}
-          To contact technical support, there is a section in the configuration screen that offers several ways to contact them. You can choose the option that is most convenient for you to receive assistance.
-        </Text>
+          {t("question_4.title") + "\n\n"} {t("question_4.content")}    </Text>
       </View>
 
       <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate("Preguntas frecuentes")}>
-        <Text style={styles.buttonText}>Go back</Text>
+        <Text style={styles.buttonText}>{t("question_4.button")}</Text>
       </TouchableOpacity>
     </View>
   );

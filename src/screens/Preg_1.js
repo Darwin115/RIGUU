@@ -1,15 +1,14 @@
 import { TouchableOpacity, View, Text, StyleSheet } from "react-native";
+import { useTranslation } from "react-i18next";
 
 function Preg_1({ navigation }) {
+  const { t } = useTranslation();
   return (
     <View style={styles.container}>
       <View style={styles.termsBox}>
         <Text style={styles.termsText}>
-          What is the function of the Quantity section when making a donation?
-          {"\n\n"}
-          This section is specifically designed to provide details about the
-          products you wish to donate, including the quantity of each type of
-          product and its condition (new, used, etc.).
+          {t("question_1.title") + "\n\n"}
+          {t("question_1.content")}
         </Text>
       </View>
 
@@ -17,7 +16,7 @@ function Preg_1({ navigation }) {
         style={styles.buttonContainer}
         onPress={() => navigation.navigate("Preguntas frecuentes")}
       >
-        <Text style={styles.buttonText}>Go back</Text>
+        <Text style={styles.buttonText}>{t("question_1.button")}</Text>
       </TouchableOpacity>
     </View>
   );

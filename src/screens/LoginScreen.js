@@ -3,8 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { Center, Box, VStack, FormControl, Input, Button, Text, Link, Image, Alert } from 'native-base';
 import { auth } from '../firebaseConfig';
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
+import { useTranslation } from 'react-i18next';
 
 export default function LoginScreen({ navigation }) {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -18,19 +20,19 @@ export default function LoginScreen({ navigation }) {
       if (user.emailVerified) {
         navigation.navigate('HomeTabs');
       } else {
-        alert('Please verify your email address before logging in.');
+        alert(t('login.email_verification_alert'));
         auth.signOut();
       }
     } catch (error) {
       // Mensajes de error personalizados para hacerlos más claros para el usuario
       if (error.code === 'auth/user-not-found') {
-        setError('No account was found with this email.');
+        setError(t('login.error_user_not_found'));
       } else if (error.code === 'auth/wrong-password') {
-        setError('Incorrect password. Please try again.');
+        setError(t('login.error_wrong_password'));
       } else if (error.code === 'auth/invalid-email') {
-        setError('El formato del correo es inválido.');
+        setError(t('login.error_invalid_email'));
       } else {
-        setError('The mail format is invalid.');
+        setError(t('login.error_generic'));
       }
     }
   };
@@ -38,9 +40,9 @@ export default function LoginScreen({ navigation }) {
   const handlePasswordReset = async () => {
     try {
       await sendPasswordResetEmail(auth, email);
-      setResetMessage('An email has been sent to reset your password.');
+      setResetMessage(t('login.reset_password_success'));
     } catch (error) {
-      setError('Please enter a valid email address before attempting to reset your password.');
+      setError(t('login.error_reset_password'));
     }
   };
 
@@ -76,9 +78,9 @@ export default function LoginScreen({ navigation }) {
 
         <VStack space={4} width="100%">
           <FormControl>
-            <FormControl.Label>Email</FormControl.Label>
+            <FormControl.Label>{t('login.email')}</FormControl.Label>
             <Input
-              placeholder="Enter email"
+              placeholder={t('login.email_placeholder')}
               value={email}
               onChangeText={setEmail}
               bg="white"
@@ -90,9 +92,9 @@ export default function LoginScreen({ navigation }) {
           </FormControl>
           
           <FormControl>
-            <FormControl.Label>Password</FormControl.Label>
+            <FormControl.Label>{t('login.password')}</FormControl.Label>
             <Input
-              placeholder="Enter password"
+              placeholder={t('login.password_placeholder')}
               type="password"
               value={password}
               onChangeText={setPassword}
@@ -110,11 +112,11 @@ export default function LoginScreen({ navigation }) {
             _text={{ color: "blue.600", fontSize: "sm" }}
             onPress={handlePasswordReset}
           >
-            Forgot your password?
+            {t('login.forgot_password')}
           </Link>
 
           <Button mt="5" colorScheme="teal" borderRadius="10" onPress={handleLogin}>
-            LOGIN
+            {t('login.login_button')}
           </Button>
 
           <Link
@@ -122,7 +124,7 @@ export default function LoginScreen({ navigation }) {
             _text={{ color: "blue.600", fontSize: "sm", textAlign: "center" }}
             onPress={() => navigation.navigate('Register')}
           >
-            Create account
+            {t('login.register')}
           </Link>
         </VStack>
       </Box>

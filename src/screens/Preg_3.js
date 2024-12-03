@@ -1,17 +1,16 @@
 import { TouchableOpacity, View, Text, StyleSheet } from "react-native";
-
+import { useTranslation } from "react-i18next";
 function Preg_3({ navigation }) {
+  const { t } = useTranslation();
   return (
     <View style={styles.container}>
       <View style={styles.termsBox}>
         <Text style={styles.termsText}>
-          How does the food donations section work?{"\n\n"}
-          In this section, you will have to select three types of food from those available. With this information, you will be able to obtain a specific recipe based on the food you choose.
-        </Text>
+          {t("question_3.title") + "\n\n"} {t("question_3.content")}        </Text>
       </View>
 
       <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate("Preguntas frecuentes")}>
-        <Text style={styles.buttonText}>Go back</Text>
+        <Text style={styles.buttonText}>{t("question_3.button")}</Text>
       </TouchableOpacity>
     </View>
   );

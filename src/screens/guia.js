@@ -1,9 +1,10 @@
 import React, { useState, useRef } from 'react';
 import { TouchableOpacity, View, StyleSheet, Text } from 'react-native';
 import { Video } from 'expo-av';
+import { useTranslation } from 'react-i18next';
 
 function Guia({ navigation }) {
-
+  const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null); 
  
@@ -28,7 +29,7 @@ function Guia({ navigation }) {
   return (
     <View style={styles.container}>
       {/* Título de la pantalla */}
-      <Text style={styles.headerText}>Video Guide</Text>
+      <Text style={styles.headerText}>{t('guide.title')}</Text>
 
       {/* Video siempre visible con controles nativos */}
       <Video
@@ -44,13 +45,13 @@ function Guia({ navigation }) {
       {/* Botones personalizados para controlar el video */}
       <View style={styles.buttonsContainer}>
         <TouchableOpacity style={styles.button} onPress={handlePlayButtonClick}>
-          <Text style={styles.buttonText}>Play</Text>
+          <Text style={styles.buttonText}>{t('guide.buttons.play')}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={handlePauseButtonClick}>
-          <Text style={styles.buttonText}>Pause</Text>
+          <Text style={styles.buttonText}>{t('guide.buttons.pause')}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={handleRestartButtonClick}>
-          <Text style={styles.buttonText}>Restart</Text>
+          <Text style={styles.buttonText}>{t('guide.buttons.restart')}</Text>
         </TouchableOpacity>
       </View>
     </View>

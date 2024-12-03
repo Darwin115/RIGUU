@@ -1,0 +1,206 @@
+{
+  "app": {
+  "login": "Login",
+  "register": "Register",
+  "home": "Home",
+  "tips": "Tips",
+  "settings": "Settings",
+  "noti": "User Profile",
+  "food": "Food",
+  "clothes": "Clothing",
+  "med": "Medicine",
+  "elec": "Electronics",
+  "your_donations": "Your Donations",
+  "tips_food": "Food Tips",
+  "tips_clothes": "Clothing Tips",
+  "tips_med": "Medicine Tips",
+  "tips_elec": "Electronics Tips",
+  "terms": "Terms and Conditions",
+  "guide": "Quick Guide",
+  "faq": "Frequently Asked Questions",
+  "q1": "Question 1",
+  "q2": "Question 2",
+  "q3": "Question 3",
+  "q4": "Question 4",
+  "contact": "Contact Us",
+  "donations": "Donations",
+  "tips_and_recipes": "Tips and Recipes"
+},
+  "login": {
+    "email": "Email",
+    "email_placeholder": "Enter email",
+    "password": "Password",
+    "password_placeholder": "Enter password",
+    "forgot_password": "Forgot your password?",
+    "login_button": "LOGIN",
+    "register": "Create account",
+    "error_user_not_found": "No account found with this email.",
+    "error_wrong_password": "Incorrect password. Please try again.",
+    "error_invalid_email": "Invalid email format.",
+    "error_generic": "Error logging in. Please try again.",
+    "error_reset_password": "Please enter a valid email before attempting to reset your password.",
+    "reset_password_success": "An email to reset your password has been sent.",
+    "email_verification_alert": "Please verify your email before logging in."
+  },
+  "register": {
+    "title": "REGISTER",
+    "name_label": "Name",
+    "name_placeholder": "Enter name",
+    "email_label": "Email",
+    "email_placeholder": "Enter email",
+    "password_label": "Password",
+    "password_placeholder": "Enter password",
+    "register_button": "REGISTER",
+    "error_email_in_use": "Email is already in use. Try another.",
+    "error_invalid_email": "Invalid email format.",
+    "error_weak_password": "The password is too weak. Use at least 6 characters.",
+    "error_generic": "Error registering. Please try again.",
+    "success_verification_email": "Verification email sent. Check your inbox."
+  },
+  "home": {
+    "categories": {
+      "food": "Food",
+      "clothes": "Clothes",
+      "medicine": "Medicine",
+      "electronics": "Electronics"
+    },
+    "your_last_donations": "Your last donations",
+    "donations_placeholder": "here will be your donations",
+    "donations_button": "Your donations"
+  },
+  "guide": {
+    "title": "Video Guide",
+    "buttons": {
+      "play": "Play",
+      "pause": "Pause",
+      "restart": "Restart"
+    }
+  },
+  "question_1": {
+    "title": "What is the function of the Quantity section when making a donation?",
+    "content": "This section is specifically designed to provide details about the products you wish to donate, including the quantity of each type of product and its condition (new, used, etc.).",
+    "button": "Go back"
+  },
+  "question_2": {
+    "title": "How can I view my donations?",
+    "content": "You can view your donations in the “Donations” menu, under the “Latest Donations” section. There they will be displayed in order, so you can review the donations you have made.",
+    "button": "Go back"
+  },
+  "question_3": {
+    "title": "How does the food donations section work?",
+    "content": "In this section, you will have to select three types of food from those available. With this information, you will be able to obtain a specific recipe based on the food you choose.",
+    "button": "Go back"
+  },
+  "question_4": {
+    "title": "How can I contact technical support?",
+    "content": "To contact technical support, there is a section in the configuration screen that offers several ways to contact them. You can choose the option that is most convenient for you to receive assistance.",
+    "button": "Go back"
+  },
+  "questions": {
+    "question1": "Question 1",
+    "question2": "Question 2",
+    "question3": "Question 3",
+    "question4": "Question 4"
+  },
+  "settings": {
+    "profile": "Profile",
+    "terms": "Terms and Conditions",
+    "quick": "Quick guide",
+    "faq": "Frequently Asked Questions",
+    "contact": "Contact Us",
+    "logout": "Logout",
+    "language": "Language",
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "terms": {
+    "acceptance": "1. Acceptance: By using RIGUU, you agree to these terms. If you do not agree, do not use the app.",
+    "use_of_application": "2. Use of the application: RIGUU is for personal use, not commercial. You must use it ethically.",
+    "intellectual_property": "3. Intellectual Property: All content on RIGUU is owned by the app or its licensors. You cannot copy it without permission.",
+    "privacy": "4. Privacy: RIGUU collects data according to its privacy policy. Your information is protected.",
+    "location": "5. Location: The app may use your location to show nearby collection centers."
+  },
+  "tips_elec": {
+    "title": "Select an electronic device to get personalized recommendations",
+    "subtitle": "Recommendations for ",
+    "phone": "Phone",
+    "laptop": "Laptop",
+    "tablet": "Tablet",
+    "television": "Television",
+    "headphones": "Headphones",
+    "camera": "Camera",
+    "console": "Console",
+    "smartwatch": "Smartwatch",
+    "router": "Router",
+    "no_recommendations": "No recommendations available for this option.",
+    "recommendations": {
+      "phone": [
+        "Donate the phone to people in need or to charitable organizations.",
+        "Recycle the phone through a specialized center.",
+        "Sell it online or in second-hand markets.",
+        "Reuse it as a backup phone or for DIY projects.",
+        "Donate parts of the phone, such as the battery or screen, to repair shops.",
+        "Turn it into a security camera or monitoring device.",
+        "Recycle its components like metals and plastics through recycling programs."
+      ],
+      "laptop": [
+        "If in good condition, donate the laptop to an organization or sell it in second-hand shops.",
+        "Reuse it for technology or education projects.",
+        "Recycle it at a center specializing in electronic devices.",
+        "Sell it through online platforms or local stores.",
+        "Use it as an entertainment center for the home or for children.",
+        "Donate accessories such as keyboards and chargers to those in need."
+      ],
+      "tablet": [
+        "Donate the tablet to someone in need or to an educational institution.",
+        "Recycle it properly at a specialized recycling center.",
+        "Reuse it as an e-reader or for educational projects.",
+        "Turn it into an entertainment device or for smart home control.",
+        "Sell it in second-hand markets or buy-sell platforms.",
+        "Use it as a music device or in digital art projects."
+      ],
+      "television": [
+        "Donate the TV to a charity or sell it through second-hand outlets.",
+        "Reuse it as a computer monitor or for gaming.",
+        "Recycle it at specialized centers for proper disposal of its parts.",
+        "Sell parts of the TV, such as the screen or electronic components.",
+        "Turn it into a DIY project, like an interactive frame or information display."
+      ],
+      "headphones": [
+        "If in good condition, donate the headphones or sell them second-hand.",
+        "Reuse them for sound projects or in repairs of other devices.",
+        "Recycle the electronic components at a specialized center.",
+        "Reuse the parts to make fashion accessories or decorations.",
+        "Sell parts like cables or ear pads for use in other devices."
+      ],
+      "camera": [
+        "Donate the camera to an educational institution or a photographer in need.",
+        "Sell the camera through second-hand platforms.",
+        "Recycle it through programs specializing in electronics.",
+        "Reuse it for home recording or photography projects.",
+        "Use it for home surveillance or in monitoring events."
+      ],
+      "console": [
+        "If in good condition, donate the console to those who don't have access to one.",
+        "Sell it in second-hand markets or online.",
+        "Recycle it at a center specializing in electronic devices.",
+        "Reuse it to organize an entertainment center or for retro gaming.",
+        "Trade it in video game stores or online platforms."
+      ],
+      "smartwatch": [
+        "Donate the smartwatch to someone in need or sell it second-hand.",
+        "Reuse it for health or personal monitoring projects.",
+        "Recycle it at a center specializing in electronic devices.",
+        "Sell parts like bands or batteries for reuse.",
+        "Turn it into a fashion accessory or gift it as part of a health kit."
+      ],
+      "router": [
+        "If no longer in use, donate it to an organization in need.",
+        "Recycle it properly at a technology-specialized center.",
+        "Reuse it as a Wi-Fi access point in another area of the house or office.",
+        "Sell it if in good condition through online platforms.",
+        "Disassemble it for technology projects or repairs."
+      ]
+    }
+  }
+}

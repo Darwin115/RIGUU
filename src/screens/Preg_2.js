@@ -1,17 +1,16 @@
 import { TouchableOpacity, View, Text, StyleSheet } from "react-native";
-
+import { useTranslation } from "react-i18next";
 function Preg_2({ navigation }) {
+  const { t } = useTranslation();
   return (
     <View style={styles.container}>
       <View style={styles.termsBox}>
         <Text style={styles.termsText}>
-          How can I view my donations?{"\n\n"}
-          You can view your donations in the “Donations” menu, under the “Latest Donations” section. There they will be displayed in order, so you can review the donations you have made.
-        </Text>
+          {t("question_2.title") + "\n\n"} {t("question_2.content")}     </Text>
       </View>
 
       <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate("Preguntas frecuentes")}>
-        <Text style={styles.buttonText}>Go back</Text>
+        <Text style={styles.buttonText}>{t("question_2.button")}</Text>
       </TouchableOpacity>
     </View>
   );

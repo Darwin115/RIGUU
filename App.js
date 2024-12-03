@@ -4,6 +4,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
+import { useTranslation } from "react-i18next";
+import "./src/i18n";
+
 
 //Menus
 import HomeScreen from "./src/screens/HomeScreen";
@@ -43,7 +46,10 @@ import RegisterScreen from './src/screens/RegisterScreen';
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
+
 function MainStack() {
+  const { t } = useTranslation();
+
   return (
     <Stack.Navigator>
 
@@ -52,7 +58,7 @@ function MainStack() {
         name="Login"
         component={LoginScreen}
         options={{
-          title: "Login",
+          title: t("app.login"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center",
@@ -65,7 +71,7 @@ function MainStack() {
         name="Register"
         component={RegisterScreen}
         options={{
-          title: "Register",
+          title: t("app.register"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center",
@@ -84,7 +90,7 @@ function MainStack() {
         name="Tips"
         component={TipsScreen}
         options={{
-          title: "Tips",
+          title: t("app.tips"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center",
@@ -96,7 +102,7 @@ function MainStack() {
         name="Settings"
         component={SettingsScreen}
         options={{
-          title: "Settings",
+          title: t("app.settings"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center",
@@ -107,7 +113,7 @@ function MainStack() {
         name="Noti"
         component={NotificationScreen}
         options={{
-          title: "User Profile",
+          title: t("app.noti"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", 
@@ -118,7 +124,7 @@ function MainStack() {
         name="Comida"
         component={D_Comida}
         options={{
-          title: "Food",
+          title: t("app.food"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", 
@@ -129,7 +135,7 @@ function MainStack() {
         name="Ropa"
         component={D_Ropa}
         options={{
-          title: "Clothing",
+          title: t("app.clothes"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", 
@@ -140,7 +146,7 @@ function MainStack() {
         name="Medicina"
         component={D_Med}
         options={{
-          title: "Medicine",
+          title: t("app.med"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", 
@@ -151,7 +157,7 @@ function MainStack() {
         name="Electrónicos"
         component={D_Elec}
         options={{
-          title: "Electronics",
+          title: t("app.elec"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", 
@@ -162,7 +168,7 @@ function MainStack() {
         name="Tus Donaciones"
         component={Tus_Don}
         options={{
-          title: "Your donations",
+          title: t("app.your_donations"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", 
@@ -173,7 +179,7 @@ function MainStack() {
         name="Tips Comida"
         component={Tips_Res}
         options={{
-          title: "Food Tips",
+          title: t("app.tips_food"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", 
@@ -184,7 +190,7 @@ function MainStack() {
         name="Tips Ropa"
         component={Tips_Rop}
         options={{
-          title: "Clothing Tips",
+          title: t("app.tips_clothes"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", 
@@ -195,7 +201,7 @@ function MainStack() {
         name="Tips Medicinas"
         component={Tips_Med}
         options={{
-          title: "Tips Medicines",
+          title: t("app.tips_med"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center",
@@ -206,7 +212,7 @@ function MainStack() {
         name="Tips Electrónicos"
         component={Tips_Elec}
         options={{
-          title: "Electronic Tips",
+          title: t("app.tips_elec"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", 
@@ -217,7 +223,7 @@ function MainStack() {
         name="Términos y Condiciones"
         component={Terminos}
         options={{
-          title: "Terms and Conditions",
+          title: t("app.terms"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", 
@@ -228,7 +234,7 @@ function MainStack() {
         name="Guía rápida"
         component={Guia}
         options={{
-          title: "Quick guide",
+          title: t("app.guide"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", 
@@ -239,7 +245,7 @@ function MainStack() {
         name="Preguntas frecuentes"
         component={Preguntas}
         options={{
-          title: "Frequently Asked Questions",
+          title: t("app.faq"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", 
@@ -250,7 +256,7 @@ function MainStack() {
         name="Pregunta 1"
         component={Preg_1}
         options={{
-          title: "Question 1",
+          title: t("app.q1"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center",
@@ -261,7 +267,7 @@ function MainStack() {
         name="Pregunta 2"
         component={Preg_2}
         options={{
-          title: "Question 2",
+          title: t("app.q2"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", 
@@ -272,7 +278,7 @@ function MainStack() {
         name="Pregunta 3"
         component={Preg_3}
         options={{
-          title: "Question 3",
+          title: t("app.q3"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", 
@@ -283,7 +289,7 @@ function MainStack() {
         name="Pregunta 4"
         component={Preg_4}
         options={{
-          title: "Question 4",
+          title: t("app.q4"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", 
@@ -293,7 +299,7 @@ function MainStack() {
         name="Contacto"
         component={Contact}
         options={{
-          title: "Contact us",
+          title: t("app.contact"),
           headerStyle: { backgroundColor: "#468585" },
           headerTintColor: "#fff",
           headerTitleAlign: "center", // Centra el título en el header
@@ -305,7 +311,9 @@ function MainStack() {
 
 // -----------------------------------------------------------------------------------------------------
 
+
 function MainTabs() {
+  const { t } = useTranslation();
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -359,17 +367,17 @@ function MainTabs() {
       <Tab.Screen
         name="Donations"
         component={HomeScreen}
-        options={{ title: "Donations" }}
+        options={{ title: t("app.donations") }}
       />
       <Tab.Screen
         name="Tips"
         component={TipsScreen}
-        options={{ title: "Tips and recipes" }}
+        options={{ title: t("app.tips") }}
       />
       <Tab.Screen
         name="Settings"
         component={SettingsScreen}
-        options={{ title: "Settings" }}
+        options={{ title: t("app.settings") }}
       />
     </Tab.Navigator>
   );
@@ -385,3 +393,4 @@ export default function App() {
     </NativeBaseProvider>
   );
 }
+

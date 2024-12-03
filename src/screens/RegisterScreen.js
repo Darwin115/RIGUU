@@ -1,11 +1,13 @@
 // src/screens/RegisterScreen.js
 import React, { useState, useEffect } from 'react';
-import { Center, Box, VStack, FormControl, Input, Button, Text, Pressable } from 'native-base';
+import { Center, Box, VStack, FormControl, Input, Button, Text, Image } from 'native-base';
 import { auth } from '../firebaseConfig';
 import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useTranslation } from 'react-i18next';
 
 export default function RegisterScreen({ navigation }) {
+  const { t } = useTranslation();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -20,7 +22,7 @@ export default function RegisterScreen({ navigation }) {
 
       // Enviar correo de verificación
       await sendEmailVerification(user);
-      setSuccessMessage('Correo de verificación enviado. Revisa tu bandeja de entrada.');
+      setSuccessMessage(t('register.success_verification_email'));
 
       // Redirigir a la pantalla de Login después de un tiempo
       setTimeout(() => {
@@ -29,13 +31,13 @@ export default function RegisterScreen({ navigation }) {
     } catch (error) {
       // Mensajes de error personalizados
       if (error.code === 'auth/email-already-in-use') {
-        setError('El correo ya está en uso. Intenta con otro.');
+        setError(t('register.error_email_in_use'));
       } else if (error.code === 'auth/invalid-email') {
-        setError('El formato del correo es inválido.');
+        setError(t('register.error_invalid_email'));
       } else if (error.code === 'auth/weak-password') {
-        setError('La contraseña es muy débil. Usa al menos 6 caracteres.');
+        setError(t('register.error_weak_password'));
       } else {
-        setError('Error al registrar. Intenta nuevamente.');
+        setError(t('register.error_generic'));
       }
     }
   };
@@ -53,24 +55,13 @@ export default function RegisterScreen({ navigation }) {
 
   return (
     <Center flex={1} bg="#A2E4B8">
+      <Box safeArea p="4" w="90%" maxW="300" py="8" alignItems="center">
+      <Image source={require('../../assets/icon.png')} alt="Logo" size="xl" mb="6" />
+      </Box>
       <Box safeArea p="4" w="90%" maxW="300" py="8">
-        <Pressable
-          onPress={() => navigation.goBack()}
-          style={{
-            position: 'absolute',
-            top: 10,
-            left: 10,
-            padding: 8,
-            backgroundColor: 'teal',
-            borderRadius: 4,
-          }}
-        >
-          <Ionicons name="arrow-back" size={24} color="white" />
-        </Pressable>
         
-        <Text fontSize="2xl" fontWeight="bold" textAlign="center" mb="6">
-          REGISTER
-        </Text>
+        
+        
         
         {/* Mensajes de Error y Confirmación */}
         {error ? (
@@ -87,9 +78,9 @@ export default function RegisterScreen({ navigation }) {
 
         <VStack space={4}>
           <FormControl>
-            <FormControl.Label>Name</FormControl.Label>
+            <FormControl.Label>{t('register.name_label')}</FormControl.Label>
             <Input
-              placeholder="Enter name"
+              placeholder={t('register.name_placeholder')}
               value={name}
               onChangeText={setName}
               bg="white"
@@ -99,9 +90,9 @@ export default function RegisterScreen({ navigation }) {
             />
           </FormControl>
           <FormControl>
-            <FormControl.Label>Email</FormControl.Label>
+            <FormControl.Label>{t('register.email_label')}</FormControl.Label>
             <Input
-              placeholder="Enter email"
+              placeholder={t('register.email_placeholder')}
               value={email}
               onChangeText={setEmail}
               bg="white"
@@ -111,9 +102,9 @@ export default function RegisterScreen({ navigation }) {
             />
           </FormControl>
           <FormControl>
-            <FormControl.Label>Password</FormControl.Label>
+            <FormControl.Label>{t('register.password_label')}</FormControl.Label>
             <Input
-              placeholder="Enter password"
+              placeholder={t('register.password_placeholder')}
               type="password"
               value={password}
               onChangeText={setPassword}
@@ -125,7 +116,7 @@ export default function RegisterScreen({ navigation }) {
           </FormControl>
 
           <Button mt="5" colorScheme="teal" borderRadius="10" onPress={handleRegister}>
-            REGISTER
+            {t('register.register_button')}
           </Button>
         </VStack>
       </Box>

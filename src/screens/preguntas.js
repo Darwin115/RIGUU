@@ -1,26 +1,26 @@
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
-import { Ionicons } from '@expo/vector-icons'; // Importar los íconos
+import { useTranslation } from "react-i18next";
 
 function Preguntas({ navigation }) {
+  const { t } = useTranslation(); // Hook para traducciones
+
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate("Pregunta 1")}>
-        <Text style={styles.buttonText}>Question 1</Text>
+        <Text style={styles.buttonText}>{t('questions.question1')}</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate("Pregunta 2")}>
-        <Text style={styles.buttonText}>Question 2</Text>
+        <Text style={styles.buttonText}>{t('questions.question2')}</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate("Pregunta 3")}>
-        <Text style={styles.buttonText}>Question 3</Text>
+        <Text style={styles.buttonText}>{t('questions.question3')}</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate("Pregunta 4")}>
-        <Text style={styles.buttonText}>Question 4</Text>
+        <Text style={styles.buttonText}>{t('questions.question4')}</Text>
       </TouchableOpacity>
-
-      
     </View>
   );
 }

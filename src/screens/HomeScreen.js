@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Image, TextInput } from "react-native";
 import { Box } from "native-base";
+import { useTranslation } from "react-i18next";
 
 function HomeScreen({ navigation }) {
+  const { t } = useTranslation();
   const [donations, setDonations] = useState(""); 
   return (
     <Box style={styles.container}>
       {/* Fila 1 de botones */}
       <View style={styles.buttonRow}>
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Food</Text>
+          <Text style={styles.buttonText}>{t('home.categories.food')}</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Comida")}
             style={styles.button}
@@ -19,7 +21,7 @@ function HomeScreen({ navigation }) {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Clothing</Text>
+          <Text style={styles.buttonText}>{t('home.categories.clothes')}</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Ropa")}
             style={styles.button}
@@ -31,7 +33,7 @@ function HomeScreen({ navigation }) {
 
       <View style={styles.buttonRow}>
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Medicine</Text>
+          <Text style={styles.buttonText}>{t('home.categories.medicine')}</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Medicina")}
             style={styles.button}
@@ -41,7 +43,7 @@ function HomeScreen({ navigation }) {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Electronics</Text>
+          <Text style={styles.buttonText}>{t('home.categories.electronics')}</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Electrónicos")}
             style={styles.button}
@@ -52,15 +54,15 @@ function HomeScreen({ navigation }) {
       </View>
 
       {/* Título y cuadro de texto para tus últimas donaciones */}
-      <Text style={styles.donationsTitle}>Your last donations</Text>
+      <Text style={styles.donationsTitle}>{t('home.your_last_donations')}</Text>
       <TextInput
         style={styles.donationsInput}
-        placeholder="Aqui estaran la donacion más reciente"
+        placeholder={t('home.donations_placeholder')}
         value={donations}
         onChangeText={setDonations}
       />
       <TouchableOpacity style={styles.donationsButton} onPress={() => navigation.navigate("Tus Donaciones")}>
-        <Text style={styles.donationsButtonText}>"Your donations"</Text>
+        <Text style={styles.donationsButtonText}>{t('home.donations_button')}</Text>
       </TouchableOpacity>
     </Box>
   );

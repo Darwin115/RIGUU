@@ -1,77 +1,79 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { Picker } from "@react-native-picker/picker";
+import { useTranslation } from "react-i18next";
 
 function Tips_Elec() {
+  const { t } = useTranslation();
   const [selectedOption, setSelectedOption] = useState("phone");
 
   const recommendations = {
     phone: [
-      "Donate the phone to people in need or to charitable organizations.",
-      "Recycle the phone through a specialized center.",
-      "Sell it online or in second-hand markets.",
-      "Reuse it as a backup phone or for DIY projects.",
-      "Donate parts of the phone, such as the battery or screen, to repair shops.",
-      "Turn it into a security camera or monitoring device.",
-      "Recycle its components like metals and plastics through recycling programs.",
+      t("tips_elec.recommendations.phone.1"),
+      t("tips_elec.recommendations.phone.2"),
+      t("tips_elec.recommendations.phone.3"),
+      t("tips_elec.recommendations.phone.4"),
+      t("tips_elec.recommendations.phone.5"),
+      t("tips_elec.recommendations.phone.6"),
+      t("tips_elec.recommendations.phone.7"),
     ],
     laptop: [
-      "If in good condition, donate the laptop to an organization or sell it in second-hand shops.",
-      "Reuse it for technology or education projects.",
-      "Recycle it at a center specializing in electronic devices.",
-      "Sell it through online platforms or local stores.",
-      "Use it as an entertainment center for the home or for children.",
-      "Donate accessories such as keyboards and chargers to those in need.",
+      t("tips_elec.recommendations.laptop.1"),
+      t("tips_elec.recommendations.laptop.2"),
+      t("tips_elec.recommendations.laptop.3"),
+      t("tips_elec.recommendations.laptop.4"),
+      t("tips_elec.recommendations.laptop.5"),
+      t("tips_elec.recommendations.laptop.6"),
     ],
     tablet: [
-      "Donate the tablet to someone in need or to an educational institution.",
-      "Recycle it properly at a specialized recycling center.",
-      "Reuse it as an e-reader or for educational projects.",
-      "Turn it into an entertainment device or for smart home control.",
-      "Sell it in second-hand markets or buy-sell platforms.",
-      "Use it as a music device or in digital art projects.",
+      t("tips_elec.recommendations.tablet.1"),
+      t("tips_elec.recommendations.tablet.2"),
+      t("tips_elec.recommendations.tablet.3"),
+      t("tips_elec.recommendations.tablet.4"),
+      t("tips_elec.recommendations.tablet.5"),
+      t("tips_elec.recommendations.tablet.6"),
     ],
     television: [
-      "Donate the TV to a charity or sell it through second-hand outlets.",
-      "Reuse it as a computer monitor or for gaming.",
-      "Recycle it at specialized centers for proper disposal of its parts.",
-      "Sell parts of the TV, such as the screen or electronic components.",
-      "Turn it into a DIY project, like an interactive frame or information display.",
+      t("tips_elec.recommendations.television.1"),
+      t("tips_elec.recommendations.television.2"),
+      t("tips_elec.recommendations.television.3"),
+      t("tips_elec.recommendations.television.4"),
+      t("tips_elec.recommendations.television.5"),
     ],
     headphones: [
-      "If in good condition, donate the headphones or sell them second-hand.",
-      "Reuse them for sound projects or in repairs of other devices.",
-      "Recycle the electronic components at a specialized center.",
-      "Reuse the parts to make fashion accessories or decorations.",
-      "Sell parts like cables or ear pads for use in other devices.",
+      t("tips_elec.recommendations.headphones.1"),
+      t("tips_elec.recommendations.headphones.2"),
+      t("tips_elec.recommendations.headphones.3"),
+      t("tips_elec.recommendations.headphones.4"),
+      t("tips_elec.recommendations.headphones.5"),
     ],
     camera: [
-      "Donate the camera to an educational institution or a photographer in need.",
-      "Sell the camera through second-hand platforms.",
-      "Recycle it through programs specializing in electronics.",
-      "Reuse it for home recording or photography projects.",
-      "Use it for home surveillance or in monitoring events.",
+      t("tips_elec.recommendations.camera.1"),
+      t("tips_elec.recommendations.camera.2"),
+      t("tips_elec.recommendations.camera.3"),
+      t("tips_elec.recommendations.camera.4"),
+      t("tips_elec.recommendations.camera.5"),
     ],
     console: [
-      "If in good condition, donate the console to those who don't have access to one.",
-      "Sell it in second-hand markets or online.",
-      "Recycle it at a center specializing in electronic devices.",
-      "Reuse it to organize an entertainment center or for retro gaming.",
-      "Trade it in video game stores or online platforms.",
+      t("tips_elec.recommendations.console.1"),
+      t("tips_elec.recommendations.console.2"),
+      t("tips_elec.recommendations.console.3"),
+      t("tips_elec.recommendations.console.4"),
+      t("tips_elec.recommendations.console.5"),
     ],
     smartwatch: [
-      "Donate the smartwatch to someone in need or sell it second-hand.",
-      "Reuse it for health or personal monitoring projects.",
-      "Recycle it at a center specializing in electronic devices.",
-      "Sell parts like bands or batteries for reuse.",
-      "Turn it into a fashion accessory or gift it as part of a health kit.",
+      t("tips_elec.recommendations.smartwatch.1"),
+      t("tips_elec.recommendations.smartwatch.2"),
+      t("tips_elec.recommendations.smartwatch.3"),
+      t("tips_elec.recommendations.smartwatch.4"),
+      t("tips_elec.recommendations.smartwatch.5"),
     ],
     router: [
-      "If no longer in use, donate it to an organization in need.",
-      "Recycle it properly at a technology-specialized center.",
-      "Reuse it as a Wi-Fi access point in another area of the house or office.",
-      "Sell it if in good condition through online platforms.",
-      "Disassemble it for technology projects or repairs.",
+      t("tips_elec.recommendations.router.1"),
+      t("tips_elec.recommendations.router.2"),
+      t("tips_elec.recommendations.router.3"),
+      t("tips_elec.recommendations.router.4"),
+      t("tips_elec.recommendations.router.5"),
     ],
   };
 
@@ -82,7 +84,7 @@ function Tips_Elec() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
-        Select an electronic device to get personalized recommendations
+        {t("tips_elec.title")}
       </Text>
 
       <View style={styles.pickerContainer}>
@@ -91,20 +93,20 @@ function Tips_Elec() {
           style={styles.picker}
           onValueChange={handleOptionChange}
         >
-          <Picker.Item label="Phone" value="phone" />
-          <Picker.Item label="Laptop" value="laptop" />
-          <Picker.Item label="Tablet" value="tablet" />
-          <Picker.Item label="Television" value="television" />
-          <Picker.Item label="Headphones" value="headphones" />
-          <Picker.Item label="Camera" value="camera" />
-          <Picker.Item label="Console" value="console" />
-          <Picker.Item label="Smartwatch" value="smartwatch" />
-          <Picker.Item label="Router" value="router" />
+          <Picker.Item label={t("tips_elec.phone")} value="phone" />
+          <Picker.Item label={t("tips_elec.laptop")} value="laptop" />
+          <Picker.Item label={t("tips_elec.tablet")} value="tablet" />
+          <Picker.Item label={t("tips_elec.television")} value="television" />
+          <Picker.Item label={t("tips_elec.headphones")} value="headphones" />
+          <Picker.Item label={t("tips_elec.camera")} value="camera" />
+          <Picker.Item label={t("tips_elec.console")} value="console" />
+          <Picker.Item label={t("tips_elec.smartwatch")} value="smartwatch" />
+          <Picker.Item label={t("tips_elec.router")} value="router" />
         </Picker>
       </View>
 
       <Text style={styles.subtitle}>
-        Recommendations for {selectedOption.charAt(0).toUpperCase() + selectedOption.slice(1)}
+        {t("tips_elec.subtitle")} {selectedOption.charAt(0).toUpperCase() + selectedOption.slice(1)}
       </Text>
 
       <ScrollView style={styles.recommendationsList}>
@@ -117,7 +119,7 @@ function Tips_Elec() {
             </View>
           ))
         ) : (
-          <Text style={styles.recommendation}>No recommendations available for this option.</Text>
+          <Text style={styles.recommendation}>{t("tips_elec.no_recommendations")}</Text>
         )}
       </ScrollView>
     </View>
