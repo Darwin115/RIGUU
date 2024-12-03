@@ -106,7 +106,7 @@ function Tips_Elec() {
       </View>
 
       <Text style={styles.subtitle}>
-        {t("tips_elec.subtitle")} {selectedOption.charAt(0).toUpperCase() + selectedOption.slice(1)}
+        {t("tips_elec.subtitle")} {t(`tips_elec.${selectedOption}`)}
       </Text>
 
       <ScrollView style={styles.recommendationsList}>

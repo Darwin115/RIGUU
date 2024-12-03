@@ -122,7 +122,7 @@
   },
   "tips_elec": {
     "title": "Selecciona un dispositivo electrónico para obtener recomendaciones personalizadas",
-  "subtitle": "Recomendaciones para ",
+  "subtitle": "Recomendaciones para",
   "phone": "Teléfono",
   "laptop": "Laptop",
   "tablet": "Tableta",
@@ -209,6 +209,117 @@
     "clothes_button": "Ropa",
     "medicines_button": "Medicinas",
     "electronics_button": "Electrónicos"
+  },
+  "tips_med": {
+    "title": "Reciclaje de medicamentos en México",
+    "description": "A continuación, encontrarás enlaces a varios sitios web donde puedes obtener información sobre cómo desechar y reciclar medicamentos de manera segura y responsable.",
+    "link1": "SINGREM - Manejo de residuos de medicamentos",
+    "link2": "Gaceta UNAM - Riesgos de medicamentos caducados",
+    "link3": "Código F - Manejo de residuos farmacéuticos",
+    "link4": "COFEPRIS - Desecho seguro y regulación",
+    "link5": "SEDEMA - Puntos de recolección en CDMX"
+  },
+  "tips_clothing": {
+    "title": "Selecciona un tipo de ropa para obtener recomendaciones personalizadas",
+    "subtitle": "Recomendaciones para",
+    "no_recommendations": "No hay recomendaciones disponibles para esta opción.",
+    "clothing_types": {
+      "t-shirt": "Camiseta",
+      "pants": "Pantalones",
+      "dress": "Vestido",
+      "sweater": "Suéter",
+      "pajamas": "Pijamas",
+      "socks": "Calcetines",
+      "shoes": "Zapatos",
+      "coat": "Abrigo",
+      "skirt": "Falda",
+      "suit": "Traje"
+    },
+    "recommendations": {
+      "t-shirt": [
+    "Dona la camiseta a organizaciones benéficas o centros de reciclaje.",
+    "Reutilízala como trapo de limpieza o para otros usos domésticos.",
+    "Transforma la camiseta en un accesorio como una bolsa reutilizable.",
+    "Recíclala para crear nuevos productos textiles o prendas.",
+    "Convierte la camiseta en una para niño cortando y cosiendo la parte inferior.",
+    "Úsala como tela para nuevos proyectos, como almohadas o cojines.",
+    "Transfórmala en una mascarilla o accesorio de moda.",
+    "Véndela o cámbiala en mercados de segunda mano o tiendas en línea."
+  ],
+  "pants": [
+    "Si ya no los usas, dónalos a personas necesitadas o véndelos en tiendas de segunda mano.",
+    "Reutilízalos para crear otros accesorios como mochilas o fundas.",
+    "Úsalos como material para manualidades o proyectos artísticos.",
+    "Recíclalos en centros de reciclaje de ropa.",
+    "Si el material lo permite, úsalos para hacer una bolsa de tela o mochila.",
+    "Transfórmalos en shorts o una falda de mezclilla.",
+    "Dónalos a talleres de costura para proyectos artísticos o de moda."
+  ],
+  "dress": [
+    "Si ya no lo usas, dónalo a una organización benéfica o véndelo en tiendas de segunda mano.",
+    "Transfórmalo en una blusa o falda reutilizando el material.",
+    "Convierte el vestido en una bolsa de tela o accesorios como diademas o bufandas.",
+    "Recíclalo para crear cojines, alfombras u otros artículos decorativos.",
+    "Si está en buen estado, véndelo en línea o en mercados de segunda mano.",
+    "Llévalo a un centro especializado en reciclaje textil.",
+    "Reutilízalo como tela para proyectos de arte o costura."
+  ],
+  "sweater": [
+    "Dona el suéter a una organización benéfica o véndelo en tiendas de segunda mano.",
+    "Reutilízalo para hacer una manta o cojín.",
+    "Convierte el suéter en un cojín para la oficina o el hogar.",
+    "Transforma el suéter en una bolsa o mochila reutilizando la tela.",
+    "Reutilízalo como tela para proyectos de costura o manualidades.",
+    "Si está en buen estado, véndelo en línea o en mercados de segunda mano.",
+    "Recíclalo en centros especializados en reciclaje textil."
+  ],
+  "pajamas": [
+    "Si están en buen estado, dona o vende el conjunto de pijama.",
+    "Reutiliza la tela para crear otros proyectos como fundas o cojines.",
+    "Transforma las pijamas en trapos de limpieza o para otros usos domésticos.",
+    "Convierte la parte superior en una blusa o la parte inferior en shorts.",
+    "Recíclalas para proyectos de arte o manualidades.",
+    "Si la tela es adecuada, reutilízalas para hacer una bolsa o mochila.",
+    "Dónalas o cámbialas en mercados de segunda mano."
+  ],
+  "socks": [
+    "Reutiliza los calcetines como trapos de limpieza o para manualidades.",
+    "Convierte los calcetines en muñecos o juguetes para niños.",
+    "Úsalos como material para proyectos de arte o costura.",
+    "Dónalos si están en buen estado.",
+    "Transfórmalos en una bolsa o accesorio de moda.",
+    "Recicla los calcetines en centros de reciclaje textil."
+  ],
+  "shoes": [
+    "Si están en buen estado, dona los zapatos a personas necesitadas.",
+    "Véndelos en mercados de segunda mano o en línea.",
+    "Reutilízalos como material para proyectos de arte o manualidades.",
+    "Recíclalos en un centro especializado en reciclaje de calzado.",
+    "Transfórmalos en un accesorio, como una maceta decorativa o colgante."
+  ],
+  "coat": [
+    "Si está en buen estado, dona el abrigo a organizaciones benéficas o véndelo en tiendas de segunda mano.",
+    "Reutiliza el material para hacer bolsas, mochilas u otros accesorios.",
+    "Convierte el abrigo en una manta para uso doméstico.",
+    "Recíclalo en un centro especializado en textiles.",
+    "Úsalo como tela para proyectos de costura o manualidades.",
+    "Reutilízalo para crear fundas o protectores para muebles."
+  ],
+  "skirt": [
+    "Si está en buen estado, dona la falda o véndela en tiendas de segunda mano.",
+    "Transforma la falda en una blusa o top reutilizando la tela.",
+    "Convierte la falda en una bolsa de tela o accesorios como diademas o bufandas.",
+    "Reutilízala como material para proyectos de costura o arte.",
+    "Recíclala en un centro especializado en reciclaje textil."
+  ],
+  "suit": [
+    "Si está en buen estado, dona el traje o véndelo en tiendas de segunda mano.",
+    "Transforma el traje en una falda o blusa reutilizando la tela.",
+    "Recíclalo para proyectos de arte o costura.",
+    "Dónalo a una organización benéfica para personas necesitadas.",
+    "Reutilízalo para crear accesorios como mochilas o estuches."
+  ]
+    }
   }
 }
   
