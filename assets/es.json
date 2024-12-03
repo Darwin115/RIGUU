@@ -202,6 +202,13 @@
       "Desármalo para proyectos tecnológicos o reparaciones."
     ]
   }
+  },
+  "tips": {
+    "title": "Consejos para reducir el desperdicio",
+    "recipes_button": "Recetas",
+    "clothes_button": "Ropa",
+    "medicines_button": "Medicinas",
+    "electronics_button": "Electrónicos"
   }
 }
   

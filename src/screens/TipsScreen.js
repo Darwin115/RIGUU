@@ -2,16 +2,19 @@ import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { Box } from "native-base";
 
+import { useTranslation } from "react-i18next";
+
 function TipsScreen({ navigation }) {
+  const { t } = useTranslation();
   return (
     <Box style={styles.container}>
       {/* Título de la pantalla */}
-      <Text style={styles.title}>Tips for Reducing Waste</Text>
+      <Text style={styles.title}>{t("tips.title")}</Text>
 
       {/* Fila 1 de botones */}
       <View style={styles.buttonRow}>
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Recipes</Text>
+          <Text style={styles.buttonText}>{t("tips.recipes_button")}</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Tips Comida")}
             style={styles.button}
@@ -21,7 +24,7 @@ function TipsScreen({ navigation }) {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Rop</Text>
+          <Text style={styles.buttonText}>{t("tips.clothes_button")}</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Tips Ropa")}
             style={styles.button}
@@ -34,7 +37,7 @@ function TipsScreen({ navigation }) {
       {/* Fila 2 de botones */}
       <View style={styles.buttonRow}>
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Medicines</Text>
+          <Text style={styles.buttonText}>{t("tips.medicines_button")}</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Tips Medicinas")}
             style={styles.button}
@@ -44,7 +47,7 @@ function TipsScreen({ navigation }) {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>Electronics</Text>
+          <Text style={styles.buttonText}>{t("tips.electronics_button")}</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("Tips Electrónicos")}
             style={styles.button}

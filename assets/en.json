@@ -202,5 +202,12 @@
         "Disassemble it for technology projects or repairs."
       ]
     }
+  },
+  "tips": {
+    "title": "Tips for Reducing Waste",
+    "recipes_button": "Recipes",
+    "clothes_button": "Clothing",
+    "medicines_button": "Medicines",
+    "electronics_button": "Electronics"
   }
 }
