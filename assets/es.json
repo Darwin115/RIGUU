@@ -1,0 +1,363 @@
+{
+  "app": {
+    "login": "Iniciar sesión",
+    "register": "Registrar",
+    "home": "Inicio",
+    "tips": "Consejos",
+    "settings": "Configuración",
+    "noti": "Perfil de usuario",
+    "food": "Comida",
+    "clothes": "Ropa",
+    "med": "Medicina",
+    "elec": "Electrónicos",
+    "your_donations": "Tus donaciones",
+    "tips_food": "Consejos sobre comida",
+    "tips_clothes": "Consejos sobre ropa",
+    "tips_med": "Consejos sobre medicinas",
+    "tips_elec": "Consejos sobre electrónicos",
+    "terms": "Términos y condiciones",
+    "guide": "Guía rápida",
+    "faq": "Preguntas frecuentes",
+    "q1": "Pregunta 1",
+    "q2": "Pregunta 2",
+    "q3": "Pregunta 3",
+    "q4": "Pregunta 4",
+    "contact": "Contáctanos",
+    "donations": "Donaciones",
+    "tips_and_recipes": "Consejos y recetas"
+  },
+    "login": {
+      "email": "Correo electrónico",
+      "email_placeholder": "Ingresa tu correo",
+      "password": "Contraseña",
+      "password_placeholder": "Ingresa tu contraseña",
+      "forgot_password": "¿Olvidaste tu contraseña?",
+      "login_button": "INICIAR SESIÓN",
+      "register": "Crear cuenta",
+      "error_user_not_found": "No se encontró una cuenta con este correo.",
+      "error_wrong_password": "Contraseña incorrecta. Por favor, intenta nuevamente.",
+      "error_invalid_email": "El formato del correo es inválido.",
+      "error_generic": "Error al iniciar sesión. Por favor, intenta nuevamente.",
+      "error_reset_password": "Por favor, ingresa un correo válido antes de intentar restablecer tu contraseña.",
+      "reset_password_success": "Se ha enviado un correo para restablecer tu contraseña.",
+      "email_verification_alert": "Por favor, verifica tu correo electrónico antes de iniciar sesión."
+    },
+    "register": {
+        "title": "REGISTRAR",
+        "name_label": "Nombre",
+        "name_placeholder": "Ingresa tu nombre",
+        "email_label": "Correo electrónico",
+        "email_placeholder": "Ingresa tu correo",
+        "password_label": "Contraseña",
+        "password_placeholder": "Ingresa tu contraseña",
+        "register_button": "REGISTRAR",
+        "error_email_in_use": "El correo ya está en uso. Intenta con otro.",
+        "error_invalid_email": "El formato del correo es inválido.",
+        "error_weak_password": "La contraseña es muy débil. Usa al menos 6 caracteres.",
+        "error_generic": "Error al registrar. Intenta nuevamente.",
+        "success_verification_email": "Correo de verificación enviado. Revisa tu bandeja de entrada."
+      },
+      "home": {
+    "categories": {
+      "food": "Comida",
+      "clothes": "Ropa",
+      "medicine": "Medicina",
+      "electronics": "Electrónicos"
+    },
+    "your_last_donations": "Tus últimas donaciones",
+    "donations_placeholder": "Aqui estaran tus donaciones",
+    "donations_button": "Tus donaciones"
+  },
+  "guide": {
+    "title": "Guía en video",
+    "buttons": {
+      "play": "Reproducir",
+      "pause": "Pausar",
+      "restart": "Reiniciar"
+    }
+  },
+  "question_1": {
+    "title": "¿Cuál es la función de la sección de Cantidad al realizar una donación?",
+    "content": "Esta sección está diseñada específicamente para proporcionar detalles sobre los productos que deseas donar, incluyendo la cantidad de cada tipo de producto y su estado (nuevo, usado, etc.).",
+    "button": "Regresar"
+  },
+  "question_2": {
+    "title": "¿Cómo puedo ver mis donaciones?",
+    "content": "Puedes ver tus donaciones en el menú “Donaciones”, en la sección “Últimas Donaciones”. Allí se mostrarán en orden para que puedas revisar las donaciones que has realizado.",
+    "button": "Regresar"
+  },
+  "question_3": {
+    "title": "¿Cómo funciona la sección de donaciones de alimentos?",
+    "content": "En esta sección, tendrás que seleccionar tres tipos de alimentos de los disponibles. Con esta información, podrás obtener una receta específica basada en los alimentos que elijas.",
+    "button": "Regresar"
+  },
+  "question_4": {
+    "title": "¿Cómo puedo contactar al soporte técnico?",
+    "content": "Para contactar al soporte técnico, hay una sección en la pantalla de configuración que ofrece varias formas de contacto. Puedes elegir la opción que sea más conveniente para recibir asistencia.",
+    "button": "Regresar"
+  },
+  "questions": {
+    "question1": "Pregunta 1",
+    "question2": "Pregunta 2",
+    "question3": "Pregunta 3",
+    "question4": "Pregunta 4"
+  },
+  "settings": {
+    "profile": "Perfil",
+    "terms": "Términos y Condiciones",
+    "guide": "Guía rápida",
+    "faq": "Preguntas frecuentes",
+    "contact": "Contáctanos",
+    "logout": "Cerrar sesión",
+    "language": "Idioma",
+    "english": "Inglés",
+    "spanish": "Español"
+  },
+  "terms": {
+    "acceptance": "1. Aceptación: Al usar RIGUU, aceptas estos términos. Si no estás de acuerdo, no uses la aplicación.",
+    "use_of_application": "2. Uso de la aplicación: RIGUU es para uso personal, no comercial. Debes usarla de manera ética.",
+    "intellectual_property": "3. Propiedad Intelectual: Todo el contenido de RIGUU pertenece a la aplicación o a sus licenciantes. No puedes copiarlo sin permiso.",
+    "privacy": "4. Privacidad: RIGUU recopila datos de acuerdo con su política de privacidad. Tu información está protegida.",
+    "location": "5. Ubicación: La aplicación puede usar tu ubicación para mostrar centros de acopio cercanos."
+  },
+  "tips_elec": {
+    "title": "Selecciona un dispositivo electrónico para obtener recomendaciones personalizadas",
+  "subtitle": "Recomendaciones para",
+  "phone": "Teléfono",
+  "laptop": "Laptop",
+  "tablet": "Tableta",
+  "television": "Televisión",
+  "headphones": "Auriculares",
+  "camera": "Cámara",
+  "console": "Consola",
+  "smartwatch": "Reloj inteligente",
+  "router": "Router",
+  "no_recommendations": "No hay recomendaciones disponibles para esta opción.",
+  "recommendations": {
+    "phone": [
+      "Dona el teléfono a personas necesitadas o a organizaciones benéficas.",
+      "Recicla el teléfono en un centro especializado.",
+      "Véndelo en línea o en mercados de segunda mano.",
+      "Reutilízalo como teléfono de respaldo o para proyectos DIY.",
+      "Dona partes del teléfono, como la batería o la pantalla, a talleres de reparación.",
+      "Convierte el teléfono en una cámara de seguridad o dispositivo de monitoreo.",
+      "Recicla sus componentes como metales y plásticos a través de programas de reciclaje."
+    ],
+    "laptop": [
+      "Si está en buen estado, dona la laptop a una organización o véndela en tiendas de segunda mano.",
+      "Reutilízala para proyectos tecnológicos o educativos.",
+      "Recíclala en un centro especializado en dispositivos electrónicos.",
+      "Véndela en plataformas en línea o tiendas locales.",
+      "Úsala como un centro de entretenimiento en casa o para niños.",
+      "Dona accesorios como teclados y cargadores a quienes los necesiten."
+    ],
+    "tablet": [
+      "Dona la tablet a alguien necesitado o a una institución educativa.",
+      "Recíclala adecuadamente en un centro de reciclaje especializado.",
+      "Reutilízala como lector de libros electrónicos o para proyectos educativos.",
+      "Conviértela en un dispositivo de entretenimiento o para control de hogar inteligente.",
+      "Véndela en mercados de segunda mano o plataformas de compra-venta.",
+      "Úsala como dispositivo de música o en proyectos de arte digital."
+    ],
+    "television": [
+      "Dona la televisión a una organización benéfica o véndela en tiendas de segunda mano.",
+      "Reutilízala como monitor de computadora o para videojuegos.",
+      "Recíclala en centros especializados para una disposición adecuada de sus partes.",
+      "Vende partes de la televisión, como la pantalla o componentes electrónicos.",
+      "Convierte la televisión en un proyecto DIY, como un marco interactivo o pantalla de información."
+    ],
+    "headphones": [
+      "Si están en buen estado, dona los audífonos o véndelos de segunda mano.",
+      "Reutilízalos en proyectos de sonido o para reparar otros dispositivos.",
+      "Recicla los componentes electrónicos en un centro especializado.",
+      "Usa las partes para hacer accesorios de moda o decoraciones.",
+      "Vende partes como cables o almohadillas para su uso en otros dispositivos."
+    ],
+    "camera": [
+      "Dona la cámara a una institución educativa o a un fotógrafo que la necesite.",
+      "Vende la cámara en plataformas de segunda mano.",
+      "Recíclala en programas especializados en electrónica.",
+      "Reutilízala para proyectos de grabación o fotografía en casa.",
+      "Úsala para vigilancia en el hogar o monitoreo de eventos."
+    ],
+    "console": [
+      "Si está en buen estado, dona la consola a quienes no tienen acceso a una.",
+      "Véndela en mercados de segunda mano o en línea.",
+      "Recíclala en un centro especializado en dispositivos electrónicos.",
+      "Reutilízala para organizar un centro de entretenimiento o para videojuegos retro.",
+      "Intercámbiala en tiendas de videojuegos o plataformas en línea."
+    ],
+    "smartwatch": [
+      "Dona el smartwatch a alguien necesitado o véndelo de segunda mano.",
+      "Reutilízalo para proyectos de monitoreo de salud o personales.",
+      "Recíclalo en un centro especializado en dispositivos electrónicos.",
+      "Vende partes como correas o baterías para reutilización.",
+      "Convierte el smartwatch en un accesorio de moda o regálalo como parte de un kit de salud."
+    ],
+    "router": [
+      "Si ya no lo usas, dóna el router a una organización necesitada.",
+      "Recíclalo adecuadamente en un centro especializado en tecnología.",
+      "Reutilízalo como un punto de acceso Wi-Fi en otra área de la casa u oficina.",
+      "Véndelo si está en buen estado a través de plataformas en línea.",
+      "Desármalo para proyectos tecnológicos o reparaciones."
+    ]
+  }
+  },
+  "tips": {
+    "title": "Consejos para reducir el desperdicio",
+    "recipes_button": "Recetas",
+    "clothes_button": "Ropa",
+    "medicines_button": "Medicinas",
+    "electronics_button": "Electrónicos"
+  },
+  "tips_med": {
+    "title": "Reciclaje de medicamentos en México",
+    "description": "A continuación, encontrarás enlaces a varios sitios web donde puedes obtener información sobre cómo desechar y reciclar medicamentos de manera segura y responsable.",
+    "link1": "SINGREM - Manejo de residuos de medicamentos",
+    "link2": "Gaceta UNAM - Riesgos de medicamentos caducados",
+    "link3": "Código F - Manejo de residuos farmacéuticos",
+    "link4": "COFEPRIS - Desecho seguro y regulación",
+    "link5": "SEDEMA - Puntos de recolección en CDMX"
+  },
+  "tips_clothing": {
+    "title": "Selecciona un tipo de ropa para obtener recomendaciones personalizadas",
+    "subtitle": "Recomendaciones para",
+    "no_recommendations": "No hay recomendaciones disponibles para esta opción.",
+    "clothing_types": {
+      "t-shirt": "Camiseta",
+      "pants": "Pantalones",
+      "dress": "Vestido",
+      "sweater": "Suéter",
+      "pajamas": "Pijamas",
+      "socks": "Calcetines",
+      "shoes": "Zapatos",
+      "coat": "Abrigo",
+      "skirt": "Falda",
+      "suit": "Traje"
+    },
+    "recommendations": {
+      "t-shirt": [
+    "Dona la camiseta a organizaciones benéficas o centros de reciclaje.",
+    "Reutilízala como trapo de limpieza o para otros usos domésticos.",
+    "Transforma la camiseta en un accesorio como una bolsa reutilizable.",
+    "Recíclala para crear nuevos productos textiles o prendas.",
+    "Convierte la camiseta en una para niño cortando y cosiendo la parte inferior.",
+    "Úsala como tela para nuevos proyectos, como almohadas o cojines.",
+    "Transfórmala en una mascarilla o accesorio de moda.",
+    "Véndela o cámbiala en mercados de segunda mano o tiendas en línea."
+  ],
+  "pants": [
+    "Si ya no los usas, dónalos a personas necesitadas o véndelos en tiendas de segunda mano.",
+    "Reutilízalos para crear otros accesorios como mochilas o fundas.",
+    "Úsalos como material para manualidades o proyectos artísticos.",
+    "Recíclalos en centros de reciclaje de ropa.",
+    "Si el material lo permite, úsalos para hacer una bolsa de tela o mochila.",
+    "Transfórmalos en shorts o una falda de mezclilla.",
+    "Dónalos a talleres de costura para proyectos artísticos o de moda."
+  ],
+  "dress": [
+    "Si ya no lo usas, dónalo a una organización benéfica o véndelo en tiendas de segunda mano.",
+    "Transfórmalo en una blusa o falda reutilizando el material.",
+    "Convierte el vestido en una bolsa de tela o accesorios como diademas o bufandas.",
+    "Recíclalo para crear cojines, alfombras u otros artículos decorativos.",
+    "Si está en buen estado, véndelo en línea o en mercados de segunda mano.",
+    "Llévalo a un centro especializado en reciclaje textil.",
+    "Reutilízalo como tela para proyectos de arte o costura."
+  ],
+  "sweater": [
+    "Dona el suéter a una organización benéfica o véndelo en tiendas de segunda mano.",
+    "Reutilízalo para hacer una manta o cojín.",
+    "Convierte el suéter en un cojín para la oficina o el hogar.",
+    "Transforma el suéter en una bolsa o mochila reutilizando la tela.",
+    "Reutilízalo como tela para proyectos de costura o manualidades.",
+    "Si está en buen estado, véndelo en línea o en mercados de segunda mano.",
+    "Recíclalo en centros especializados en reciclaje textil."
+  ],
+  "pajamas": [
+    "Si están en buen estado, dona o vende el conjunto de pijama.",
+    "Reutiliza la tela para crear otros proyectos como fundas o cojines.",
+    "Transforma las pijamas en trapos de limpieza o para otros usos domésticos.",
+    "Convierte la parte superior en una blusa o la parte inferior en shorts.",
+    "Recíclalas para proyectos de arte o manualidades.",
+    "Si la tela es adecuada, reutilízalas para hacer una bolsa o mochila.",
+    "Dónalas o cámbialas en mercados de segunda mano."
+  ],
+  "socks": [
+    "Reutiliza los calcetines como trapos de limpieza o para manualidades.",
+    "Convierte los calcetines en muñecos o juguetes para niños.",
+    "Úsalos como material para proyectos de arte o costura.",
+    "Dónalos si están en buen estado.",
+    "Transfórmalos en una bolsa o accesorio de moda.",
+    "Recicla los calcetines en centros de reciclaje textil."
+  ],
+  "shoes": [
+    "Si están en buen estado, dona los zapatos a personas necesitadas.",
+    "Véndelos en mercados de segunda mano o en línea.",
+    "Reutilízalos como material para proyectos de arte o manualidades.",
+    "Recíclalos en un centro especializado en reciclaje de calzado.",
+    "Transfórmalos en un accesorio, como una maceta decorativa o colgante."
+  ],
+  "coat": [
+    "Si está en buen estado, dona el abrigo a organizaciones benéficas o véndelo en tiendas de segunda mano.",
+    "Reutiliza el material para hacer bolsas, mochilas u otros accesorios.",
+    "Convierte el abrigo en una manta para uso doméstico.",
+    "Recíclalo en un centro especializado en textiles.",
+    "Úsalo como tela para proyectos de costura o manualidades.",
+    "Reutilízalo para crear fundas o protectores para muebles."
+  ],
+  "skirt": [
+    "Si está en buen estado, dona la falda o véndela en tiendas de segunda mano.",
+    "Transforma la falda en una blusa o top reutilizando la tela.",
+    "Convierte la falda en una bolsa de tela o accesorios como diademas o bufandas.",
+    "Reutilízala como material para proyectos de costura o arte.",
+    "Recíclala en un centro especializado en reciclaje textil."
+  ],
+  "suit": [
+    "Si está en buen estado, dona el traje o véndelo en tiendas de segunda mano.",
+    "Transforma el traje en una falda o blusa reutilizando la tela.",
+    "Recíclalo para proyectos de arte o costura.",
+    "Dónalo a una organización benéfica para personas necesitadas.",
+    "Reutilízalo para crear accesorios como mochilas o estuches."
+  ]
+    }
+  },
+  "tips_recipes": {
+    "select_first_food": "Selecciona el primer alimento:",
+    "select_second_food": "Selecciona el segundo alimento compatible:",
+    "get_recipe": "Obtener Receta",
+    "suggested_recipe": "Receta Sugerida:",
+    "no_recipe_found": "No se encontró una receta para esa combinación.",
+    "recipes": {
+      "Carne-Papas": "Carne asada con papas",
+      "Carne-Arroz": "Carne guisada con arroz",
+      "Carne-Frijoles": "Frijoles puercos",
+      "Carne-Verduras": "Cocido de Res",
+      "Pollo-Papas": "Pollo al horno con papas",
+      "Pollo-Verduras": "Pollo al vapor con verduras",
+      "Pollo-Arroz": "Caldo de pollo con arroz",
+      "Huevo-Papas": "Huevo con papas al sartén",
+      "Huevo-Frijoles": "Huevo revuelto con frijoles",
+      "Huevo-Arroz": "Huevo frito con arroz blanco",
+      "Huevo-Verduras": "Huevo revuelto con verduras",
+      "Queso-Verduras": "Verduras gratinadas con queso",
+      "Queso-Papas": "Queso fundido con papas",
+      "Queso-Arroz": "Arroz a la mexicana con queso",
+      "Queso-Frijoles": "Enfrijoladas",
+      "Pescado-Verduras": "Pescado al vapor con verduras",
+      "Pescado-Arroz": "Pescado empanizado con arroz",
+      "Pescado-Papas": "Pescado frito con papas"
+    },
+    "food_options": {
+      "Papas": "Papas",
+      "Frijoles": "Frijoles",
+      "Arroz": "Arroz",
+      "Verduras": "Verduras",
+      "Pollo": "Pollo",
+      "Huevo": "Huevo",
+      "Queso": "Queso",
+      "Pescado": "Pescado",
+      "Carne": "Carne"
+    }
+  }
+}
+  
