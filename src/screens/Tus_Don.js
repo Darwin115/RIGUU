@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet, FlatList } from "react-native";
 import { Text, VStack, HStack, Box } from "native-base";
+import { Skeleton, SkeletonText } from "native-base";
 import { auth } from "../firebaseConfig";
 import { getFirestore, collection, query, where, getDocs, orderBy } from "firebase/firestore";
+import { useTranslation } from "react-i18next";
 
 const firestore = getFirestore();
 
 export default function DonationsScreen() {
+  const { t } = useTranslation();
   const [donations, setDonations] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -16,7 +19,7 @@ export default function DonationsScreen() {
         const user = auth.currentUser;
 
         if (!user) {
-          alert("You must be logged in to view your donations.");
+          alert(t("your_donations.must_be_logged_in"));
           return;
         }
 
@@ -35,8 +38,8 @@ export default function DonationsScreen() {
         setDonations(donationsList);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching donations: ", error);
-        alert("Failed to load donations.");
+        console.error(t("your_donations.fetch_error"), error);
+        alert(t("your_donations.load_fail"));
       }
     };
 
@@ -47,14 +50,15 @@ export default function DonationsScreen() {
     <Box style={styles.donationBox}>
       <HStack space={3} justifyContent="space-between" alignItems="center">
         <VStack>
-          <Text style={styles.categoryText}>Category: {item.categoria}</Text>
-          <Text style={styles.productText}>Product: {item.producto}</Text>
-          <Text style={styles.amountText}>Amount: {item.cantidad}</Text>
-          <Text style={styles.locationText}>Location: {item.location}</Text>
-        </VStack>
-        <Text style={styles.dateText}>
+          <Text style={styles.categoryText}>{t("your_donations.category")}: {t(`your_donations.categories.${item.categoria}`)}</Text>
+          <Text style={styles.productText}>{t("your_donations.product")}: {t(`your_donations.products.${item.producto}`)}</Text>
+          <Text style={styles.amountText}>{t("your_donations.amount")}: {item.cantidad}</Text>
+          <Text style={styles.locationText}>{t("your_donations.location")}: {t(`your_donations.centers.${item.location}`)}</Text>
+          <Text style={styles.dateText}>
           {new Date(item.timestamp.toDate()).toLocaleDateString()}
         </Text>
+        </VStack>
+        
       </HStack>
     </Box>
   );
@@ -65,10 +69,17 @@ export default function DonationsScreen() {
 
       <VStack space={4} alignItems="center" style={styles.content}>
         {loading ? (
-          <Text style={styles.loadingText}>Loading your donations...</Text>
+          <>
+          <Skeleton height={150} color={"#ffffff"}/>
+          <Skeleton height={150} color={"#ffffff"}/>
+          <Skeleton height={150} color={"#ffffff"}/>
+          <Skeleton height={150} color={"#ffffff"}/>
+          <Skeleton height={150} color={"#ffffff"}/>
+          
+          </>
         ) : donations.length === 0 ? (
           <Text style={styles.noDonationsText}>
-            You haven't made any donations yet.
+            {t("your_donations.no_donations")}
           </Text>
         ) : (
           <FlatList
@@ -86,7 +97,7 @@ export default function DonationsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#CFF9CC", // Fondo verde claro
+    backgroundColor: "#9CDBA6", // Fondo verde claro
   },
   header: {
     backgroundColor: "#68A691", // Verde más oscuro
@@ -110,14 +121,14 @@ const styles = StyleSheet.create({
   noDonationsText: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#4A4A4A",
+    color: "#fff",
     textAlign: "center",
   },
   list: {
     width: "100%",
   },
   donationBox: {
-    backgroundColor: "#fff",
+    backgroundColor: "#468585",
     borderRadius: 10,
     padding: 15,
     marginBottom: 10,
@@ -130,23 +141,27 @@ const styles = StyleSheet.create({
   categoryText: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#2A9D8F",
+    color: "#fff",
   },
   productText: {
     fontSize: 16,
-    color: "#4A4A4A",
+    color: "#fff",
   },
   amountText: {
     fontSize: 16,
-    color: "#4A4A4A",
+    color: "#fff",
   },
   locationText: {
     fontSize: 16,
-    color: "#4A4A4A",
+    color: "#fff",
+
   },
   dateText: {
     fontSize: 14,
-    color: "#8E8E8E",
+    color: "#fff",
     textAlign: "right",
+    position: "fixed", // Utilizamos posición absoluta
+    bottom: 1,           // Asegura que esté abajo
+    right: 1,            // Asegura que esté a la derecha
   },
 });

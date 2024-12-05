@@ -5,10 +5,13 @@ import { Picker } from "@react-native-picker/picker";
 import { Button, VStack } from "native-base";
 import { auth } from "../firebaseConfig";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { useTranslation } from "react-i18next";
 
 const firestore = getFirestore();
 
+
 function D_Elec({ navigation }) {
+  const { t } = useTranslation();
   const [selectedElectronic, setSelectedElectronic] = useState("Mobile Phones");
   const [amount, setAmount] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("Collection Center 1");
@@ -41,14 +44,14 @@ function D_Elec({ navigation }) {
 
   const handleDonate = async () => {
     if (!amount || isNaN(amount) || parseInt(amount) <= 0) {
-      Alert.alert("Invalid Input", "Please enter a valid amount.");
+      Alert.alert(t("donate_electronics.invalid_input"), t("donate_electronics.invalid_input_message"));
       return;
     }
 
     const user = auth.currentUser;
 
     if (!user) {
-      Alert.alert("Not Logged In", "You must be logged in to make a donation.");
+      Alert.alert(t("donate_electronics.not_logged_in"), t("donate_electronics.not_logged_in_message"));
       return;
     }
 
@@ -64,11 +67,11 @@ function D_Elec({ navigation }) {
         timestamp: new Date(),
       });
 
-      Alert.alert("Donation Successful", "Your donation has been recorded!");
+      Alert.alert(t("donate_electronics.donation_successful"), t("donate_electronics.donation_successful_message"));
       setAmount("");
     } catch (error) {
-      console.error("Error adding donation: ", error);
-      Alert.alert("Error", "Failed to record the donation. Please try again.");
+      console.error(t("donate_electronics.error_adding_donation"), error);
+      Alert.alert(t("donate_electronics.error"), t("donate_electronics.error_message"));
     } finally {
       setIsSubmitting(false);
     }
@@ -79,10 +82,10 @@ function D_Elec({ navigation }) {
       {/* Input para tipo de electrónico y cantidad */}
       <View style={styles.inputRow}>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Type of Electronic Device</Text>
+          <Text style={styles.inputLabel}>{t("donate_electronics.type_of_electronic_device")}</Text>
         </View>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Amount</Text>
+          <Text style={styles.inputLabel}>{t("donate_electronics.amount")}</Text>
         </View>
       </View>
 
@@ -93,21 +96,21 @@ function D_Elec({ navigation }) {
             onValueChange={(itemValue) => setSelectedElectronic(itemValue)}
             style={styles.electronicPicker}
           >
-            <Picker.Item label="Mobile Phones" value="Mobile Phones" />
-            <Picker.Item label="Laptops" value="Laptops" />
-            <Picker.Item label="Televisions" value="Televisions" />
-            <Picker.Item label="Cameras" value="Cameras" />
-            <Picker.Item label="Radios" value="Radios" />
-            <Picker.Item label="Chargers" value="Chargers" />
-            <Picker.Item label="Headphones" value="Headphones" />
-            <Picker.Item label="Game Consoles" value="Game Consoles" />
-            <Picker.Item label="Small Appliances" value="Small Appliances" />
+            <Picker.Item label={t("donate_electronics.mobile_phones")} value="Mobile Phones" />
+            <Picker.Item label={t("donate_electronics.laptops")} value="Laptops" />
+            <Picker.Item label={t("donate_electronics.televisions")} value="Televisions" />
+            <Picker.Item label={t("donate_electronics.cameras")} value="Cameras" />
+            <Picker.Item label={t("donate_electronics.radios")} value="Radios" />
+            <Picker.Item label={t("donate_electronics.chargers")} value="Chargers" />
+            <Picker.Item label={t("donate_electronics.headphones")} value="Headphones" />
+            <Picker.Item label={t("donate_electronics.game_consoles")} value="Game Consoles" />
+            <Picker.Item label={t("donate_electronics.small_appliances")} value="Small Appliances" />
           </Picker>
         </View>
 
         <TextInput
           style={styles.amountInput}
-          placeholder="Quantity"
+          placeholder={t("donate_electronics.amount")}
           value={amount}
           onChangeText={setAmount}
           keyboardType="numeric"
@@ -115,7 +118,7 @@ function D_Elec({ navigation }) {
       </View>
 
       {/* Selección de ubicación */}
-      <Text style={styles.mapTitle}>Select Location</Text>
+      <Text style={styles.mapTitle}>{t("donate_electronics.select_location")}</Text>
 
       <MapView key={mapRegion.latitude} style={styles.mapContainer} region={mapRegion}>
         <Marker
@@ -139,10 +142,10 @@ function D_Elec({ navigation }) {
           onValueChange={(itemValue) => setSelectedLocation(itemValue)}
           style={styles.picker}
         >
-          <Picker.Item label="Collection Center 1 - Cruz Roja Aguascalientes" value="Collection Center 1" />
-          <Picker.Item label="Collection Center 2 - DIF Estatal Aguascalientes" value="Collection Center 2" />
-          <Picker.Item label="Collection Center 3 - Banco de Alimentos A.C." value="Collection Center 3" />
-          <Picker.Item label="Collection Center 4 - Parroquia del Sagrario" value="Collection Center 4" />
+          <Picker.Item label={t("donate_electronics.collection_center_1")} value="Collection Center 1" />
+          <Picker.Item label={t("donate_electronics.collection_center_2")} value="Collection Center 2" />
+          <Picker.Item label={t("donate_electronics.collection_center_3")} value="Collection Center 3" />
+          <Picker.Item label={t("donate_electronics.collection_center_4")} value="Collection Center 4" />
         </Picker>
       </View>
 
@@ -158,7 +161,7 @@ function D_Elec({ navigation }) {
           borderRadius="10"
           mt="4"
         >
-          Donate
+          {t("donate_electronics.donate")}
         </Button>
       </VStack>
     </View>

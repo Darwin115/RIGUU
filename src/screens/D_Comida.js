@@ -5,10 +5,12 @@ import { Picker } from "@react-native-picker/picker";
 import { Button, VStack } from "native-base";
 import { auth } from "../firebaseConfig";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { useTranslation } from "react-i18next";
 
 const firestore = getFirestore();
 
 function D_Food({ navigation }) {
+  const { t } = useTranslation();
   const [selectedFood, setSelectedFood] = useState("Canned Food");
   const [amount, setAmount] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("Collection Center 1");
@@ -41,14 +43,14 @@ function D_Food({ navigation }) {
 
   const handleDonate = async () => {
     if (!amount || isNaN(amount) || parseInt(amount) <= 0) {
-      Alert.alert("Invalid Input", "Please enter a valid amount.");
+      Alert.alert(t("donate_food.invalidInput"), t("donate_food.invalidAmountMessage"));
       return;
     }
 
     const user = auth.currentUser;
 
     if (!user) {
-      Alert.alert("Not Logged In", "You must be logged in to make a donation.");
+      Alert.alert(t("donate_food.notLoggedIn"), t("donate_food.loginMessage"));
       return;
     }
 
@@ -64,11 +66,11 @@ function D_Food({ navigation }) {
         timestamp: new Date(),
       });
 
-      Alert.alert("Donation Successful", "Your donation has been recorded!");
+      Alert.alert(t("donate_food.donationSuccessful"), t("donate_food.donationRecordedMessage"));
       setAmount(""); // Resetea el campo de cantidad
     } catch (error) {
-      console.error("Error adding donation: ", error);
-      Alert.alert("Error", "Failed to record the donation. Please try again.");
+      console.error(t("donate_food.errorAddingDonation"), error);
+      Alert.alert("Error", t("donate_food.failedRecordDonation"));
     } finally {
       setIsSubmitting(false); // Restablece el estado de envío
     }
@@ -79,10 +81,10 @@ function D_Food({ navigation }) {
       {/* Input para comida y cantidad */}
       <View style={styles.inputRow}>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Type of Food</Text>
+          <Text style={styles.inputLabel}>{t("donate_food.typeOfFood")}</Text>
         </View>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Amount</Text>
+          <Text style={styles.inputLabel}>{t("donate_food.amount")}</Text>
         </View>
       </View>
 
@@ -93,20 +95,20 @@ function D_Food({ navigation }) {
             onValueChange={(itemValue) => setSelectedFood(itemValue)}
             style={styles.foodPicker}
           >
-            <Picker.Item label="Canned Food" value="Canned Food" />
-            <Picker.Item label="Cereals" value="Cereals" />
-            <Picker.Item label="Bottled Water" value="Bottled Water" />
-            <Picker.Item label="Rice" value="Rice" />
-            <Picker.Item label="Pasta" value="Pasta" />
-            <Picker.Item label="Dried Fruits" value="Dried Fruits" />
-            <Picker.Item label="Oil" value="Oil" />
-            <Picker.Item label="Sugar" value="Sugar" />
+            <Picker.Item label={t("donate_food.cannedFood")} value="Canned Food" />
+            <Picker.Item label={t("donate_food.cereals")} value="Cereals" />
+            <Picker.Item label={t("donate_food.bottledWater")} value="Bottled Water" />
+            <Picker.Item label={t("donate_food.rice")} value="Rice" />
+            <Picker.Item label={t("donate_food.pasta")} value="Pasta" />
+            <Picker.Item label={t("donate_food.driedFruits")} value="Dried Fruits" />
+            <Picker.Item label={t("donate_food.oil")} value="Oil" />
+            <Picker.Item label={t("donate_food.sugar")} value="Sugar" />
           </Picker>
         </View>
 
         <TextInput
           style={styles.amountInput}
-          placeholder="Amount"
+          placeholder={t("donate_food.amount")}
           value={amount}
           onChangeText={setAmount}
           keyboardType="numeric"
@@ -114,7 +116,7 @@ function D_Food({ navigation }) {
       </View>
 
       {/* Selección de ubicación */}
-      <Text style={styles.mapTitle}>Select Location</Text>
+      <Text style={styles.mapTitle}>{t("donate_food.selectLocation")}</Text>
 
       <MapView key={mapRegion.latitude} style={styles.mapContainer} region={mapRegion}>
         <Marker
@@ -138,10 +140,10 @@ function D_Food({ navigation }) {
           onValueChange={(itemValue) => setSelectedLocation(itemValue)}
           style={styles.picker}
         >
-          <Picker.Item label="Collection Center 1 - Cruz Roja Aguascalientes" value="Collection Center 1" />
-          <Picker.Item label="Collection Center 2 - DIF Estatal Aguascalientes" value="Collection Center 2" />
-          <Picker.Item label="Collection Center 3 - Banco de Alimentos A.C." value="Collection Center 3" />
-          <Picker.Item label="Collection Center 4 - Parroquia del Sagrario" value="Collection Center 4" />
+          <Picker.Item label={t("donate_food.collectionCenter1")} value="Collection Center 1" />
+          <Picker.Item label={t("donate_food.collectionCenter2")} value="Collection Center 2" />
+          <Picker.Item label={t("donate_food.collectionCenter3")} value="Collection Center 3" />
+          <Picker.Item label={t("donate_food.collectionCenter4")} value="Collection Center 4" />
         </Picker>
       </View>
 
@@ -157,7 +159,7 @@ function D_Food({ navigation }) {
           borderRadius="10"
           mt="4"
         >
-          Donate
+          {t("donate_food.donate")}
         </Button>
       </VStack>
     </View>

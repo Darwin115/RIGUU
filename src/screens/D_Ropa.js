@@ -5,10 +5,12 @@ import { Picker } from "@react-native-picker/picker";
 import { Button, VStack } from "native-base";
 import { auth } from "../firebaseConfig";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { useTranslation } from "react-i18next";
 
 const firestore = getFirestore();
 
 function D_Clothing({ navigation }) {
+  const { t } = useTranslation();
   const [selectedClothing, setSelectedClothing] = useState("T-Shirts");
   const [amount, setAmount] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("Collection Center 1");
@@ -41,14 +43,14 @@ function D_Clothing({ navigation }) {
 
   const handleDonate = async () => {
     if (!amount || isNaN(amount) || parseInt(amount) <= 0) {
-      Alert.alert("Invalid Input", "Please enter a valid amount.");
+      Alert.alert(t("donate_electronics.invalid_input"), t("donate_electronics.invalid_input_message"));
       return;
     }
 
     const user = auth.currentUser;
 
     if (!user) {
-      Alert.alert("Not Logged In", "You must be logged in to make a donation.");
+      Alert.alert(t("donate_electronics.not_logged_in"), t("donate_electronics.not_logged_in_message"));
       return;
     }
 
@@ -64,11 +66,11 @@ function D_Clothing({ navigation }) {
         timestamp: new Date(),
       });
 
-      Alert.alert("Donation Successful", "Your donation has been recorded!");
+      Alert.alert(t("donate_electronics.donation_successful"), t("donate_electronics.donation_successful_message"));
       setAmount("");
     } catch (error) {
-      console.error("Error adding donation: ", error);
-      Alert.alert("Error", "Failed to record the donation. Please try again.");
+      console.error(t("donate_electronics.error_adding_donation"), error);
+      Alert.alert(t("donate_electronics.error"), t("donate_electronics.error_message"));
     } finally {
       setIsSubmitting(false);
     }
@@ -79,10 +81,10 @@ function D_Clothing({ navigation }) {
       {/* Input para tipo de ropa y cantidad */}
       <View style={styles.inputRow}>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Clothing Type</Text>
+          <Text style={styles.inputLabel}>{t("donate_clothes.clothing_type")}</Text>
         </View>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Amount</Text>
+          <Text style={styles.inputLabel}>{t("donate_clothes.amount")}</Text>
         </View>
       </View>
 
@@ -93,20 +95,20 @@ function D_Clothing({ navigation }) {
             onValueChange={(itemValue) => setSelectedClothing(itemValue)}
             style={styles.clothingPicker}
           >
-            <Picker.Item label="T-Shirts" value="T-Shirts" />
-            <Picker.Item label="Pants" value="Pants" />
-            <Picker.Item label="Jackets" value="Jackets" />
-            <Picker.Item label="Shoes" value="Shoes" />
-            <Picker.Item label="Sheets" value="Sheets" />
-            <Picker.Item label="Scarves" value="Scarves" />
-            <Picker.Item label="Gloves" value="Gloves" />
-            <Picker.Item label="Hats" value="Hats" />
+            <Picker.Item label={t("donate_clothes.t_shirt")} value="T-Shirts" />
+            <Picker.Item label={t("donate_clothes.pants")} value="Pants" />
+            <Picker.Item label={t("donate_clothes.jacket")} value="Jackets" />
+            <Picker.Item label={t("donate_clothes.shoes")} value="Shoes" />
+            <Picker.Item label={t("donate_clothes.sheets")} value="Sheets" />
+            <Picker.Item label={t("donate_clothes.scarves")} value="Scarves" />
+            <Picker.Item label={t("donate_clothes.gloves")} value="Gloves" />
+            <Picker.Item label={t("donate_clothes.hats")} value="Hats" />
           </Picker>
         </View>
 
         <TextInput
           style={styles.amountInput}
-          placeholder="Amount"
+          placeholder={t("donate_clothes.amount")}
           value={amount}
           onChangeText={setAmount}
           keyboardType="numeric"
@@ -114,7 +116,7 @@ function D_Clothing({ navigation }) {
       </View>
 
       {/* Selección de ubicación */}
-      <Text style={styles.mapTitle}>Select Location</Text>
+      <Text style={styles.mapTitle}>{t("donate_clothes.select_location")}</Text>
 
       <MapView key={mapRegion.latitude} style={styles.mapContainer} region={mapRegion}>
         <Marker
@@ -138,10 +140,10 @@ function D_Clothing({ navigation }) {
           onValueChange={(itemValue) => setSelectedLocation(itemValue)}
           style={styles.picker}
         >
-          <Picker.Item label="Collection Center 1 - Cruz Roja Aguascalientes" value="Collection Center 1" />
-          <Picker.Item label="Collection Center 2 - DIF Estatal Aguascalientes" value="Collection Center 2" />
-          <Picker.Item label="Collection Center 3 - Banco de Alimentos A.C." value="Collection Center 3" />
-          <Picker.Item label="Collection Center 4 - Parroquia del Sagrario" value="Collection Center 4" />
+          <Picker.Item label={t("donate_medicines.collection_center_1")} value="Collection Center 1" />
+          <Picker.Item label={t("donate_medicines.collection_center_2")} value="Collection Center 2" />
+          <Picker.Item label={t("donate_medicines.collection_center_3")} value="Collection Center 3" />
+          <Picker.Item label={t("donate_medicines.collection_center_4")} value="Collection Center 4" />
         </Picker>
       </View>
 
@@ -157,7 +159,7 @@ function D_Clothing({ navigation }) {
           borderRadius="10"
           mt="4"
         >
-          Donate
+          {t("donate_clothes.donate")}
         </Button>
       </VStack>
     </View>

@@ -5,10 +5,12 @@ import { Picker } from "@react-native-picker/picker";
 import { Button, VStack } from "native-base";
 import { auth } from "../firebaseConfig";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { useTranslation } from "react-i18next";
 
 const firestore = getFirestore();
 
 function D_Med({ navigation }) {
+  const { t } = useTranslation();
   const [selectedMedication, setSelectedMedication] = useState("Non-expired medications");
   const [amount, setAmount] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("Collection Center 1");
@@ -41,14 +43,14 @@ function D_Med({ navigation }) {
 
   const handleDonate = async () => {
     if (!amount || isNaN(amount) || parseInt(amount) <= 0) {
-      Alert.alert("Invalid Input", "Please enter a valid amount.");
+      Alert.alert(t("donate_electronics.invalid_input"), t("donate_electronics.invalid_input_message"));
       return;
     }
 
     const user = auth.currentUser;
 
     if (!user) {
-      Alert.alert("Not Logged In", "You must be logged in to make a donation.");
+      Alert.alert(t("donate_electronics.not_logged_in"), t("donate_electronics.not_logged_in_message"));
       return;
     }
 
@@ -64,11 +66,12 @@ function D_Med({ navigation }) {
         timestamp: new Date(),
       });
 
-      Alert.alert("Donation Successful", "Your donation has been recorded!");
+
+      Alert.alert(t("donate_electronics.donation_successful"), t("donate_electronics.donation_successful_message"));
       setAmount("");
     } catch (error) {
-      console.error("Error adding donation: ", error);
-      Alert.alert("Error", "Failed to record the donation. Please try again.");
+      console.error(t("donate_electronics.error_adding_donation"), error);
+      Alert.alert(t("donate_electronics.error"), t("donate_electronics.error_message"));
     } finally {
       setIsSubmitting(false);
     }
@@ -79,10 +82,10 @@ function D_Med({ navigation }) {
       {/* Input para tipo de medicina y cantidad */}
       <View style={styles.inputRow}>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Medication Type</Text>
+          <Text style={styles.inputLabel}>{t("donate_medicines.medication_type")}</Text>
         </View>
         <View style={styles.inputLabelContainer}>
-          <Text style={styles.inputLabel}>Amount</Text>
+          <Text style={styles.inputLabel}>{t("donate_medicines.amount")}</Text>
         </View>
       </View>
 
@@ -93,22 +96,22 @@ function D_Med({ navigation }) {
             onValueChange={(itemValue) => setSelectedMedication(itemValue)}
             style={styles.medicationPicker}
           >
-            <Picker.Item label="Non-expired medications" value="Non-expired medications" />
-            <Picker.Item label="Pain relievers" value="Pain relievers" />
-            <Picker.Item label="Antibiotics" value="Antibiotics" />
-            <Picker.Item label="Anti-inflammatory drugs" value="Anti-inflammatory drugs" />
-            <Picker.Item label="Vitamins" value="Vitamins" />
-            <Picker.Item label="Cough medicines" value="Cough medicines" />
-            <Picker.Item label="Fever reducers" value="Fever reducers" />
-            <Picker.Item label="Hypertension medications" value="Hypertension medications" />
-            <Picker.Item label="Diabetes medications" value="Diabetes medications" />
-            <Picker.Item label="Nutritional supplements" value="Nutritional supplements" />
+            <Picker.Item label={t("donate_medicines.non_expired_medications")} value="Non-expired medications" />
+            <Picker.Item label={t("donate_medicines.pain_relievers")} value="Pain relievers" />
+            <Picker.Item label={t("donate_medicines.antibiotics")} value="Antibiotics" />
+            <Picker.Item label={t("donate_medicines.anti_inflammatory_drugs")} value="Anti-inflammatory drugs" />
+            <Picker.Item label={t("donate_medicines.vitamins")} value="Vitamins" />
+            <Picker.Item label={t("donate_medicines.cough_medicines")} value="Cough medicines" />
+            <Picker.Item label={t("donate_medicines.fever_reducers")} value="Fever reducers" />
+            <Picker.Item label={t("donate_medicines.hypertension_medications")} value="Hypertension medications" />
+            <Picker.Item label={t("donate_medicines.diabetes_medications")} value="Diabetes medications" />
+            <Picker.Item label={t("donate_medicines.nutritional_supplements")} value="Nutritional supplements" />
           </Picker>
         </View>
 
         <TextInput
           style={styles.amountInput}
-          placeholder="Amount"
+          placeholder={t("donate_medicines.amount")}
           value={amount}
           onChangeText={setAmount}
           keyboardType="numeric"
@@ -116,7 +119,7 @@ function D_Med({ navigation }) {
       </View>
 
       {/* Selección de ubicación */}
-      <Text style={styles.mapTitle}>Select Location</Text>
+      <Text style={styles.mapTitle}>{t("donate_medicines.select_location")}</Text>
 
       <MapView key={mapRegion.latitude} style={styles.mapContainer} region={mapRegion}>
         <Marker
@@ -140,10 +143,10 @@ function D_Med({ navigation }) {
           onValueChange={(itemValue) => setSelectedLocation(itemValue)}
           style={styles.picker}
         >
-          <Picker.Item label="Collection Center 1 - Cruz Roja Aguascalientes" value="Collection Center 1" />
-          <Picker.Item label="Collection Center 2 - DIF Estatal Aguascalientes" value="Collection Center 2" />
-          <Picker.Item label="Collection Center 3 - Banco de Alimentos A.C." value="Collection Center 3" />
-          <Picker.Item label="Collection Center 4 - Parroquia del Sagrario" value="Collection Center 4" />
+          <Picker.Item label={t("donate_medicines.collection_center_1")} value="Collection Center 1" />
+          <Picker.Item label={t("donate_medicines.collection_center_2")} value="Collection Center 2" />
+          <Picker.Item label={t("donate_medicines.collection_center_3")} value="Collection Center 3" />
+          <Picker.Item label={t("donate_medicines.collection_center_4")} value="Collection Center 4" />
         </Picker>
       </View>
 
@@ -159,7 +162,7 @@ function D_Med({ navigation }) {
           borderRadius="10"
           mt="4"
         >
-          Donate
+          {t("donate_medicines.donate")}
         </Button>
       </VStack>
     </View>
