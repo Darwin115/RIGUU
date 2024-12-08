@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   donationBox: {
-    backgroundColor: "#468585",
+    backgroundColor: "#fff",
     borderRadius: 10,
     padding: 15,
     marginBottom: 10,
@@ -141,24 +141,24 @@ const styles = StyleSheet.create({
   categoryText: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#fff",
+    color: "#68A691",
   },
   productText: {
     fontSize: 16,
-    color: "#fff",
+    color: "#000",
   },
   amountText: {
     fontSize: 16,
-    color: "#fff",
+    color: "#000",
   },
   locationText: {
     fontSize: 16,
-    color: "#fff",
+    color: "#000",
 
   },
   dateText: {
     fontSize: 14,
-    color: "#fff",
+    color: "gray",
     textAlign: "right",
     position: "fixed", // Utilizamos posición absoluta
     bottom: 1,           // Asegura que esté abajo
